@@ -8,7 +8,6 @@
 
 int main()
 {
-
     struct ifaddrs *addresses;
 
     if (getifaddrs(&addresses) == -1) {
