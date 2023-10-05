@@ -15,21 +15,21 @@ int main()
         return -1;
     }
 
-    struct ifaddrs *address = addresses;
+    struct ifaddrs *current_address = addresses;
 
-    while (address) {
-        int family = address->ifa_addr->sa_family;
+    while (current_address) {
+        int family = current_address->ifa_addr->sa_family;
         if (family == AF_INET || family == AF_INET6) {
-            printf("%s\t", address->ifa_name);
+            printf("%s\t", current_address->ifa_name);
             printf("%s\t", family == AF_INET ? "IPv4" : "IPv6");
 
             char ap[100];
 
             const int family_size = family == AF_INET ? sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6);
-            getnameinfo(address->ifa_addr, family_size, ap, sizeof(ap), 0, 0, NI_NUMERICHOST);
+            getnameinfo(current_address->ifa_addr, family_size, ap, sizeof(ap), 0, 0, NI_NUMERICHOST);
             printf("\t%s\n", ap);
         }
-        address = address->ifa_next;
+        current_address = current_address->ifa_next;
     }
     freeifaddrs(addresses);
     return 0;
