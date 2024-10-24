@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.json": "json",
+        "stdio.h": "c",
+        "_stdio.h": "c",
+        "_printf.h": "c"
+    }
+}
