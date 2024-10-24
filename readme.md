@@ -24,13 +24,9 @@
 
 ## Data types
 - Primitive
-- Compound / user defined
-- Array
+- Compound / User defined
 
 ## Variable
-
-## Constant
-### Enumerator (enum)
 
 ## Function
 ### Definition
@@ -45,6 +41,15 @@
 - Function prototype
 - Function
 - Nested
+
+## Struct / Structure
+## Union
+## Enum / Enumeration
+
+## Type Qualifiers
+- const
+- volatile
+- restrict
 
 ## Memory
 ### Duration / Lifetime
@@ -65,8 +70,11 @@
 
 ## Dynamic memory management
 - malloc()
+- aligned_alloc()
 - calloc()
 - realloc()
+- reallocarray()
+- alloca()
 - free()
 
 ## Memory management issues
