@@ -1,0 +1,17 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "notes",
+            "displayName": "GCC 14.2.0 aarch64-apple-darwin24",
+            "description": "Using compilers: C = /opt/homebrew/bin/aarch64-apple-darwin24-gcc-14, CXX = /opt/homebrew/bin/aarch64-apple-darwin24-g++-14",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14",
+                "CMAKE_CXX_COMPILER": "/opt/homebrew/bin/aarch64-apple-darwin24-g++-14",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ]
+}
