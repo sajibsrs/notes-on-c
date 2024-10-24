@@ -1,0 +1,6 @@
+BasedOnStyle: LLVM
+PointerAlignment: Left
+AllowShortFunctionsOnASingleLine: Empty
+BreakBeforeBraces: Attach
+IndentWidth: 2
+ColumnLimit: 120
