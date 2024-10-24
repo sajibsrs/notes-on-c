@@ -5,12 +5,12 @@
 ### Preparing Code Editor / IDE
 
 ## Program structure
-### The main() function
+### The `main()` function
 
 ## Headers
 ## Standard library
-- <stdlib.h>
 - <stdio.h>
+- <stdlib.h>
 - <sys/socket.h>
 - <netdb.h>
 - <ifaddrs.h>
@@ -24,7 +24,7 @@
 
 ## Data types
 - Primitive
-- Compound/user defined
+- Compound / user defined
 - Array
 
 ## Variable
@@ -39,18 +39,29 @@
 - Parameters
 - Variable number of parameters
 
+## Scope
+- File
+- Block
+- Function prototype
+- Function
+- Nested
+
 ## Memory
-C supports 3 types of memory.
-
-1. Static
-2. Dynamic
-3. Automatic
-
-### Scope and lifetime
-- Global
-- Static
-- Dynamic
+### Duration / Lifetime
 - Automatic
+- Static
+- Thread
+- Dynamic / Allocated
+
+## Pointer & reference
+- Pointer type
+- Pointer to value
+- Reference of memory address
+- Pointer to array
+- Pointer to function
+- Pointer to struct (Structure)
+- Pointer to pointer
+- Constant pointer
 
 ## Dynamic memory management
 - malloc()
@@ -73,16 +84,6 @@ C supports 3 types of memory.
 - Wild Pointers
 - Out-of-Memory Errors
 - Memory Corruption
-
-## Pointer & reference
-- Pointer type
-- Pointer to value
-- Reference of memory address
-- Pointer to array
-- Pointer to function
-- Pointer to struct (Structure)
-- Pointer to pointer
-- Constant pointer
 
 ## Input & output (IO)
 
