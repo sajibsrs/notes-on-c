@@ -16,16 +16,16 @@
 - <ifaddrs.h>
 
 ## Running a program
-### Source code
-### Compilation
-### Linking
-### Building
-### Execution
+- Source code
+- Compilation
+- Linking
+- Building
+- Execution
 
 ## Data types
-### Primitive
-### Compound/user defined
-### Array
+- Primitive
+- Compound/user defined
+- Array
 
 ## Variable
 
@@ -34,29 +34,29 @@
 
 ## Function
 ### Definition
-#### Return type
-#### Name
-#### Parameters
-#### Variable number of parameters
+- Return type
+- Name
+- Parameters
+- Variable number of parameters
 
 ## Memory
 C supports 3 types of memory.
 
-### Static
-### Dynamic
-### Automatic
+1. Static
+2. Dynamic
+3. Automatic
 
 ### Scope and lifetime
-#### Global
-#### Static
-#### Dynamic
-#### Automatic
+- Global
+- Static
+- Dynamic
+- Automatic
 
 ## Dynamic memory management
-### malloc()
-### calloc()
-### realloc()
-### free()
+- malloc()
+- calloc()
+- realloc()
+- free()
 
 ## Memory management issues
 - Dangling pointer
@@ -75,14 +75,14 @@ C supports 3 types of memory.
 - Memory Corruption
 
 ## Pointer & reference
-### Pointer type
-### Pointer to value
-### Reference of memory address
-### Pointer to array
-### Pointer to function
-### Pointer to structure (struct)
-### Pointer to pointer
-### Constant pointer
+- Pointer type
+- Pointer to value
+- Reference of memory address
+- Pointer to array
+- Pointer to function
+- Pointer to struct (Structure)
+- Pointer to pointer
+- Constant pointer
 
 ## Input & output (IO)
 
