@@ -69,11 +69,11 @@
 - Constant pointer
 
 ## Dynamic memory management
-- malloc()
+- [malloc()](./docs/memory/dynamic.md#malloc)
 - aligned_alloc()
 - calloc()
 - realloc()
-- reallocarray()
+- reallocarray() (Not standard)
 - alloca()
 - free()
 
