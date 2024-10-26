@@ -52,9 +52,11 @@
 - restrict
 
 ## Bitwise Operators
-- [NOT (~)](./docs/bitwise.md#not-operator-)
-- [AND (&)](./docs/bitwise.md#and-operator-)
-- [SHIFT (<< and >>)](./docs/bitwise.md#bit-shifting)
+- [AND (&)](./docs/bitwise.md#and-)
+- [OR (|)](./docs/bitwise.md#or-)
+- [NOT (~)](./docs/bitwise.md#not-)
+- [SHIFT LEFT (<<)](./docs/bitwise.md#shift-left-)
+- [SHIFT RIGHT (>>)](./docs/bitwise.md#shift-right-)
 
 ## Memory
 ### Duration / Lifetime
