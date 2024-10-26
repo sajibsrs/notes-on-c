@@ -1,4 +1,5 @@
 # Memory in C Language
+
 ## Memory management issues
 ### Memory leak
 A memory leak occurs when a computer program doesn't release or "forget" memory it no longer needs. Over time, this unused memory accumulates and can lead to the program consuming more and more memory, slowing down the system or causing it to crash. Think of it as a gradual and silent resource waste that can harm a computer's performance if not resolved.
