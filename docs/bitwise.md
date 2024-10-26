@@ -1,8 +1,12 @@
 # Bitwise Operators in C
 
-## NOT Operator (~)
+## AND (&)
 
-## AND Operator (&)
+## OR (|)
+
+## NOT (~)
+
+## XOR (^)
 
 ## Bit Shifting
 
