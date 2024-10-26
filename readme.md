@@ -51,6 +51,11 @@
 - volatile
 - restrict
 
+## Bitwise Operators
+- [NOT (~)](./docs/bitwise.md#not-operator-)
+- [AND (&)](./docs/bitwise.md#and-operator-)
+- [SHIFT (<< and >>)](./docs/bitwise.md#bit-shifting)
+
 ## Memory
 ### Duration / Lifetime
 - Automatic
