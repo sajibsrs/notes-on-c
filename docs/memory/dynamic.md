@@ -31,9 +31,11 @@ It is often recommended to cast result of a memory allocation function call but 
 int* p = (int*)malloc(sizeof(int));
 ```
 
-## aligned_alloc()
 ## calloc()
 ## realloc()
-## reallocarray() (Not standard)
-## alloca()
+
 ## free()
+
+## alloca()
+## aligned_alloc()
+## reallocarray()
