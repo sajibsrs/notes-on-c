@@ -52,7 +52,6 @@ Description: <wchar.h> is a C header that supports wide character handling, also
 ### # <wctype.h>
 Description: <wctype.h> is a C header that provides functions for wide character classification and conversion, similar to <ctype.h> but for wide characters. Wide characters, also known as multibyte characters, are crucial for working with text in different languages and character sets. Some of the functions in <wctype.h> include iswalpha, iswdigit, and towupper. These functions allow you to classify wide characters and perform conversions between wide characters, including uppercase and lowercase transformations. <wctype.h> is indispensable for creating multilingual software that can handle diverse text inputs, making it a vital component of internationalization and localization in C programming.
 
-
 ## # POSIX-compliant headers (UNIX/LINUX etc)
 ### # <unistd.h>
 "unistd.h" is a header file that provides access to a wide range of system-related constants, types, and functions in C. It is a fundamental header for system-level programming on POSIX-compliant operating systems like Unix and Linux. This header includes constants like STDIN_FILENO and STDOUT_FILENO, which represent standard input and output file descriptors, and functions such as "read" and "write" for performing I/O operations. Additionally, "unistd.h" offers system call constants like "fork" and "exec" for process management and "getpid" for retrieving the process ID. It plays a pivotal role in enabling low-level interactions with files, processes, and system resources.
