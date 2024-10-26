@@ -8,11 +8,9 @@
 
 ## XOR (^)
 
-## Bit Shifting
+## SHIFT LEFT (<<)
 
-### SHIFT LEFT (<<)
-
-### SHIFT RIGHT (>>)
+## SHIFT RIGHT (>>)
 
 ### Bit Order / Bit significance
 #### Most Significant Bit (MSB)
