@@ -26,5 +26,5 @@
 - The LSB is also sometimes called the "rightmost bit" or simply the "low bit."
 
 ### Byte Order / Endianness
-#### Big Endian
-#### Small Endian
+#### Big Endian (BE)
+#### Little Endian (LE)
