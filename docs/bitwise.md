@@ -28,3 +28,44 @@
 ### Byte Order / Endianness
 #### Big Endian (BE)
 #### Little Endian (LE)
+
+## Memory Program
+Here's a program to determine memory address, byte order and binary values stored in the memory.
+
+```c
+char* char_to_bin(char c) {
+  char* arr = malloc(9); // 8 bits + 1 for the null terminator
+  if (!arr) {
+    return NULL;
+  }
+
+  for (int i = (sizeof(char) * 8) - 1; i >= 0; i--) {
+    arr[7 - i] = ((c >> i) & 1) ? '1' : '0'; // bit-masking and string conversion
+  }
+  arr[8] = '\0';
+
+  return arr;
+}
+
+int main() {
+  int x = 1;
+  char* px = (char*)&x;
+
+  for (int i = 0; i < sizeof(int); i++) {
+    char* binary = char_to_bin(*(px + i));
+    printf("byte %d at: %p %s\n", i, (void*)(px + i), binary);
+
+    free(binary);
+  }
+
+  return 0;
+}
+```
+
+Output:
+```txt
+byte 0 at: 0x16b68af54 00000001
+byte 1 at: 0x16b68af55 00000000
+byte 2 at: 0x16b68af56 00000000
+byte 3 at: 0x16b68af57 00000000
+```
