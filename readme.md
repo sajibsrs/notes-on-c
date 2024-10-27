@@ -59,6 +59,8 @@
 - [SHIFT RIGHT (>>)](./docs/bitwise.md#shift-right-)
 
 ## Memory
+- [Computer Memory](./docs/memory/memory.md)
+
 ### Duration / Lifetime
 - Automatic
 - Static
@@ -77,12 +79,14 @@
 
 ## Dynamic memory management
 - [malloc()](./docs/memory/dynamic.md#malloc)
-- aligned_alloc()
 - calloc()
 - realloc()
-- reallocarray() (Not standard)
-- alloca()
 - free()
+
+### Others:
+- alloca()
+- aligned_alloc()
+- reallocarray()
 
 ## Memory management issues
 - Dangling pointer
