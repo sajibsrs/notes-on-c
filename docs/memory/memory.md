@@ -31,6 +31,24 @@
 - **Stack:** Stores local variables, function call information (stack frames), and grows downward from high to low addresses.
 
 ### Stack
+Simplified:
+```txt
++--------------------------+  <- High memory address
+|          Frame 1         |
++--------------------------+
+|          Frame 2         |
++--------------------------+
+|       Current Frame      |
++--------------------------+    (Grows downward ↓)
+|       Stack Pointer      |
++--------------------------+
+|                          |
+|        Free Space        |
+|                          |
++--------------------------+  <- Low memory address
+```
+
+Detailed:
 ```txt
 +--------------------------+  <- High memory address
 |       Frame Pointer      |  <-+--> Pointer to frame 1
@@ -49,7 +67,7 @@
 +--------------------------+    |
 |      Return address      |  <-+
 +--------------------------+
-|      Stack Pointer       |  <- Points top of the stack (Grows downward ↓)
+|       Stack Pointer      |  <- Points top of the stack (Frame)
 +--------------------------+
 |                          |
 |        Free Space        |
