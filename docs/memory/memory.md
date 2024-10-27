@@ -21,7 +21,8 @@
 - **Text Segment:** Contains the compiled program code (instructions). It's typically read-only to prevent accidental modification.
 
 - **Data Segment:** Stores global and static variables that are explicitly initialized in the code.
-BSS Segment: Holds global and static variables that are uninitialized or initialized to zero.
+
+- **BSS Segment:** Holds global and static variables that are uninitialized or initialized to zero.
 
 - **Heap:** Used for dynamically allocated memory (e.g., memory allocated with malloc in C). Grows upward as needed.
 
@@ -32,23 +33,27 @@ BSS Segment: Holds global and static variables that are uninitialized or initial
 ### Stack
 ```txt
 +--------------------------+  <- High memory address
-|  Previous Function Frame |
-+--------------------------+
-|      Return Address      |  <-+
+|    Saved Frame Pointer   |  <-+--> Frame pointer
 +--------------------------+    |
-|    Saved Frame Pointer   |    |
-+--------------------------+    |--> Stack frame
-|    Function Parameters   |    |
+|      Local Variables     |    |
++--------------------------+    |--> Previous frame
+|         Arguments        |    |
 +--------------------------+    |
-|      Local Variables     |  <-+
+|      Return address      |  <-+
 +--------------------------+
-|        Temporaries       |
+|    Saved Frame Pointer   |  <-+--> Frame pointer
++--------------------------+    |
+|      Local Variables     |    |
++--------------------------+    |--> Current frame
+|         Arguments        |    |
++--------------------------+    |
+|      Return address      |  <-+
++--------------------------+
+|      Stack Pointer       |  <- Stack pointer
 +--------------------------+
 |                          |
 |        Free Space        |
 |                          |
-+--------------------------+
-|      Stack Pointer       |  <- Points to the top of the stack
 +--------------------------+  <- Low memory address
 ```
 
