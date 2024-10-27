@@ -33,15 +33,15 @@
 ### Stack
 ```txt
 +--------------------------+  <- High memory address
-|    Saved Frame Pointer   |  <-+--> Frame pointer
+|       Frame Pointer      |  <-+--> Pointer to frame 1
 +--------------------------+    |
 |      Local Variables     |    |
-+--------------------------+    |--> Previous frame
++--------------------------+    |--> Frame 2
 |         Arguments        |    |
 +--------------------------+    |
 |      Return address      |  <-+
 +--------------------------+
-|    Saved Frame Pointer   |  <-+--> Frame pointer
+|       Frame Pointer      |  <-+--> Pointer to frame 2
 +--------------------------+    |
 |      Local Variables     |    |
 +--------------------------+    |--> Current frame
@@ -49,7 +49,7 @@
 +--------------------------+    |
 |      Return address      |  <-+
 +--------------------------+
-|      Stack Pointer       |  <- Stack pointer
+|      Stack Pointer       |  <- Points top of the stack (Grows downward ↓)
 +--------------------------+
 |                          |
 |        Free Space        |
