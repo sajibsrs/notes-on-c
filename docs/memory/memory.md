@@ -2,21 +2,21 @@
 ## Random Access Memory (RAM)
 **Memory Layout of RAM:**
 ```plaintext
-+---------------------------+  <- High memory address
-|            Stack          |  <- Growing Downward ↓
-+---------------------------+
-|                           |
-|         Free Space        |  <- Dynamic area that grows or shrinks
-|                           |
-+---------------------------+
-|            Heap           |  <- Growing Upward ↑
-+---------------------------+
-|         BSS Segment       |
-+---------------------------+
-|        Data Segment       |
-+---------------------------+
-|        Text Segment       |
-+---------------------------+  <- Low memory address
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  ← High memory address
+┃           Stack           ┃  ← Growing Downward ↓
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃                           ┃
+┃        Free Space         ┃  ← Dynamic area that grows or shrinks
+┃                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃           Heap            ┃  ← Growing Upward ↑
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃        BSS Segment        ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃       Data Segment        ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃       Text Segment        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  ← Low memory address
 ```
 
 - **Text Segment:** Contains the compiled program code (instructions). It's typically read-only to prevent accidental modification.
@@ -25,7 +25,7 @@
 
 - **BSS Segment:** Holds global and static variables that are uninitialized or initialized to zero.
 
-- **Heap:** Used for dynamically allocated memory (e.g., memory allocated with malloc in C). Grows upward as needed.
+- **Heap:** Used for dynamically allocated memory (e.g., memory allocated with `malloc` in C). Grows upward as needed.
 
 - **Free Space:** The area between the heap and stack, allowing each to grow as required.
 
@@ -34,46 +34,46 @@
 ### Stack
 **Simplified Diagram:**
 ```plaintext
-+--------------------------+  <- High memory address
-|          Frame 1         |
-+--------------------------+
-|          Frame 2         |
-+--------------------------+
-|       Current Frame      |
-+--------------------------+    (Grows downward ↓)
-|       Stack Pointer      |
-+--------------------------+
-|                          |
-|        Free Space        |
-|                          |
-+--------------------------+  <- Low memory address
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  ← High memory address
+┃         Frame 1           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃         Frame 2           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃      Current Frame        ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫  (Grows downward ↓)
+┃       Stack Pointer       ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃                           ┃
+┃        Free Space         ┃
+┃                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  ← Low memory address
 ```
 
 **Detailed Diagram:**
 ```plaintext
-+--------------------------+  <- High memory address
-|       Frame Pointer      |  <-+--> Pointer to frame 1
-+--------------------------+    |
-|      Local Variables     |    |
-+--------------------------+    |--> Frame 2
-|         Arguments        |    |
-+--------------------------+    |
-|      Return address      |  <-+
-+--------------------------+
-|       Frame Pointer      |  <-+--> Pointer to frame 2
-+--------------------------+    |
-|      Local Variables     |    |
-+--------------------------+    |--> Current frame
-|         Arguments        |    |
-+--------------------------+    |
-|      Return address      |  <-+
-+--------------------------+
-|       Stack Pointer      |  <- Points top of the stack (Frame)
-+--------------------------+
-|                          |
-|        Free Space        |
-|                          |
-+--------------------------+  <- Low memory address
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  ← High memory address
+┃       Frame Pointer       ┃  ←┐ ↳ Pointer to frame 1
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │
+┃      Local Variables      ┃   │
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │ ↳ Frame 2
+┃         Arguments         ┃   │
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │
+┃      Return Address       ┃  ←┘
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃       Frame Pointer       ┃  ←┐ ↳ Pointer to frame 2
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │
+┃      Local Variables      ┃   │
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │ ↳ Current frame
+┃         Arguments         ┃   │
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫   │
+┃      Return Address       ┃  ←┘
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃       Stack Pointer       ┃  ← Points to top of the stack (Frame)
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃                           ┃
+┃        Free Space         ┃
+┃                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  ← Low memory address
 ```
 
 - **Previous Function Frame:** Contains the stack frame of the function that called the current function.
@@ -125,3 +125,4 @@
 - **Stack Pointer:** Always points to the current frame.
 - **Frame Pointer:** Always points to base of it's previous frame.
 
+#### Call-Stack
