@@ -121,11 +121,12 @@
 
 ## Books & Resources (Recommendation)
 ### Books
-| Title                            | Edition | Year | Author(s)                               | Audience | C Version |
-| -------------------------------- | ------- | ---- | --------------------------------------- | -------- | --------- |
-| C Programming: A Modern Approach | 2nd     | 2009 | K. N. King                              | Everyone | Up to C11 |
-| Modern C for Absolute Beginners  | 2nd     | 2024 | Slobodan Dmitrović                      | Beginner | Up to C23 |
-| Intermediate C Programming       | 2nd     | 2024 | Yung-Hsiang Lu, George K. Thiruvathukal | Everyone | Up to C23 |
+| Title                            | Edition | Year | Author(s)                               | Audience     | C Version |
+| -------------------------------- | ------- | ---- | --------------------------------------- | ------------ | --------- |
+| C Programming: A Modern Approach | 2nd     | 2009 | K. N. King                              | Everyone     | Up to C11 |
+| Modern C for Absolute Beginners  | 2nd     | 2024 | Slobodan Dmitrović                      | Beginner     | Up to C23 |
+| Intermediate C Programming       | 2nd     | 2024 | Yung-Hsiang Lu, George K. Thiruvathukal | Everyone     | Up to C23 |
+| Tiny C Projects                  | 1st     | 2022 | Dan Gookin                              | Intermediate | Up to C23 |
 
 
 #### Classics
