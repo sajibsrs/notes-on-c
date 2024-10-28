@@ -59,7 +59,8 @@
 - [SHIFT RIGHT (>>)](./docs/bitwise.md#shift-right-)
 
 ## Memory
-- [Computer Memory](./docs/memory/memory.md)
+- [Random Access Memory (RAM)](./docs/memory/memory.md#random-access-memory-ram)
+- [Stack](./docs/memory/memory.md#stack)
 
 ### Duration / Lifetime
 - Automatic
