@@ -1,4 +1,4 @@
-# C Programming
+# C Programming Notes
 
 ## Installation
 ### Compiler
@@ -27,6 +27,10 @@
 - Compound / User defined
 
 ## Variable
+
+## String
+### Format Specifier
+### Conversion Specifier
 
 ## Function
 ### Definition
