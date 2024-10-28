@@ -1,5 +1,6 @@
 # Computer Memory
 ## Random Access Memory (RAM)
+**Memory Layout of RAM:**
 ```plaintext
 +---------------------------+  <- High memory address
 |            Stack          |  <- Growing Downward ↓
