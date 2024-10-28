@@ -1,6 +1,6 @@
 # Computer Memory
 ## Random Access Memory (RAM)
-```txt
+```plaintext
 +---------------------------+  <- High memory address
 |            Stack          |  <- Growing Downward ↓
 +---------------------------+
@@ -32,7 +32,7 @@
 
 ### Stack
 Simplified:
-```txt
+```plaintext
 +--------------------------+  <- High memory address
 |          Frame 1         |
 +--------------------------+
@@ -49,7 +49,7 @@ Simplified:
 ```
 
 Detailed:
-```txt
+```plaintext
 +--------------------------+  <- High memory address
 |       Frame Pointer      |  <-+--> Pointer to frame 1
 +--------------------------+    |
