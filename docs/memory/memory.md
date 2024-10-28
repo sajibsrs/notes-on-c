@@ -121,6 +121,6 @@
 - **Frame 1:** `main()` function.
 - **Frame 2:** `f1()` function.
 - **Frame 3 / Current Frame:** `f2()` function (called from `f1()`).
-- **Stack Pointer:** Always points to current frame.
+- **Stack Pointer:** Always points to the current frame.
 - **Frame Pointer:** Always points to base of it's previous frame.
 
