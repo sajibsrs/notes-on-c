@@ -121,21 +121,21 @@
 
 ## Books & Resources (Recommendation)
 ### Books
-| Title                            | Edition | Publication Year | Author(s)                               | Audience | C Version Covered |
-| -------------------------------- | ------- | ---------------- | --------------------------------------- | -------- | ----------------- |
-| C Programming: A Modern Approach | 2nd     | 2009             | K. N. King                              | Everyone | Up to C11         |
-| Modern C for Absolute Beginners  | 2nd     | 2024             | Slobodan Dmitrović                      | Beginner | Up to C23         |
-| Intermediate C Programming       | 2nd     | 2024             | Yung-Hsiang Lu, George K. Thiruvathukal | Everyone | Up to C23         |
+| Title                            | Edition | Year | Author(s)                               | Audience | C Version |
+| -------------------------------- | ------- | ---- | --------------------------------------- | -------- | --------- |
+| C Programming: A Modern Approach | 2nd     | 2009 | K. N. King                              | Everyone | Up to C11 |
+| Modern C for Absolute Beginners  | 2nd     | 2024 | Slobodan Dmitrović                      | Beginner | Up to C23 |
+| Intermediate C Programming       | 2nd     | 2024 | Yung-Hsiang Lu, George K. Thiruvathukal | Everyone | Up to C23 |
 
 
 #### Classics
 Books listed here are classics. They are considered the best so far but unfortunately they are extremely outdated. Some of the topic and method might not be even relevant, deprecated or removed. They are mostly published 30-50 years ago (some more or less).
 
-| Title                                | Edition  | Publication Year | Author(s)                             | Audience | C Version Covered |
-| ------------------------------------ | -------- | ---------------- | ------------------------------------- | -------- | ----------------- |
-| The C Programming Language           | 1st, 2nd | 1978, 1988       | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89, C99    |
-| C Programming: A Modern Approach     | 1st      | 1996             | K. N. King                            | Everyone | Up to C99         |
-| Expert C Programming: Deep C Secrets | 1st      | 1994             | Peter van der Linden                  | Expert   | Up to C99         |
+| Title                                | Edition  | Year       | Author(s)                             | Audience | C Version      |
+| ------------------------------------ | -------- | ---------- | ------------------------------------- | -------- | -------------- |
+| The C Programming Language           | 1st, 2nd | 1978, 1988 | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89, C99 |
+| C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C99      |
+| Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C99      |
 
 
 ### Resources
