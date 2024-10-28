@@ -31,7 +31,7 @@
 - **Stack:** Stores local variables, function call information (stack frames), and grows downward from high to low addresses.
 
 ### Stack
-Simplified:
+**Simplified Diagram:**
 ```plaintext
 +--------------------------+  <- High memory address
 |          Frame 1         |
@@ -48,7 +48,7 @@ Simplified:
 +--------------------------+  <- Low memory address
 ```
 
-Detailed:
+**Detailed Diagram:**
 ```plaintext
 +--------------------------+  <- High memory address
 |       Frame Pointer      |  <-+--> Pointer to frame 1
@@ -90,4 +90,37 @@ Detailed:
 - **Free Space:** Area that can be used by either the stack or the heap, depending on allocation needs.
 
 - **Stack Pointer:** A pointer that indicates the current top of the stack, changing as frames are pushed or popped.
+
+**A Program in C That Uses Call-Stack:**
+```c
+ 1. #include <stdio.h>
+ 2.
+ 3. int f1(int a, int b) {
+ 4.     a = a + 2;
+ 5.     b = b * 2;
+ 6.
+ 7.     return (a + b);
+ 8. }
+ 9.
+10. int f2(void) {
+11.     int x = 1;
+12.     int y = 2;
+13.
+14.     return f1(x, y);
+15. }
+16.
+17. int main(void) {
+18.     int n = f2();
+19.
+20.     printf("%d\n", n);
+21.
+22.     return 0;
+23. }
+```
+
+- **Frame 1:** `main()` function.
+- **Frame 2:** `f1()` function.
+- **Frame 3 / Current Frame:** `f2()` function (called from `f1()`).
+- **Stack Pointer:** Always points to current frame.
+- **Frame Pointer:** Always points to base of it's previous frame.
 
