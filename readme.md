@@ -118,3 +118,18 @@
 
 ## Data structures
 ## Algorithms
+
+## Books & Resources (Recommendation)
+### Books
+- C Programming: A Modern Approach - 2nd edition (2009) by K. N. King (for everyone, covers up to c11)
+- Modern C for Absolute Beginners - 2nd edition (2024) by Slobodan Dmitrović (for beginner, covers up to c23)
+- Intermediate C Programming - 2nd edition (2024) by Yung-Hsiang Lu, George K . Thiruvathukal (for everyone, covers up to c23)
+
+#### Classics
+Books listed here are classics. They are considered the best so far but unfortunately they are extremely outdated. Some of the topic and method might not be even relevant, deprecated or removed. They are mostly published 30-50 years ago (some more or less).
+
+- The C Programming language (often referred as "The C Bible") - 1st, 2nd edition (1978, 1988) by Brian W. Kernighan and Dennis M. Ritchie (for everyone, covers up to c89, c99)
+- C Programming: A Modern Approach - 1st edition (1996) by K. N. King (for everyone, covers up to c99)
+- Expert C Programming: Deep C Secrets - 1st edition (1994) by Peter van der Linden (for expert, covers up to c99)
+
+### Resources
