@@ -137,11 +137,11 @@
 #### Classics
 Books listed here are classics. They are considered the best so far, but unfortunately they are extremely outdated. Some of the topics and methods might not be relevant, deprecated or removed. They are mostly published 30-50 years ago (some more or less).
 
-| Title                                | Edition  | Year       | Author(s)                             | Audience | C Version      |
-| ------------------------------------ | -------- | ---------- | ------------------------------------- | -------- | -------------- |
-| The C Programming Language           | 1st, 2nd | 1978, 1988 | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89, C99 |
-| C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C89      |
-| Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C89      |
+| Title                                | Edition  | Year       | Author(s)                             | Audience | C Version |
+| ------------------------------------ | -------- | ---------- | ------------------------------------- | -------- | --------- |
+| The C Programming Language           | 1st, 2nd | 1978, 1988 | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89 |
+| C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C89 |
+| Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C89 |
 
 
 ### Resources
