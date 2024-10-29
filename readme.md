@@ -128,7 +128,7 @@
 ### Books
 | Title                            | Edition | Year | Author(s)                               | Audience     | C Version |
 | -------------------------------- | ------- | ---- | --------------------------------------- | ------------ | --------- |
-| C Programming: A Modern Approach | 2nd     | 2009 | K. N. King                              | Everyone     | Up to C11 |
+| C Programming: A Modern Approach | 2nd     | 2009 | K. N. King                              | Everyone     | Up to C99 |
 | Modern C for Absolute Beginners  | 2nd     | 2024 | Slobodan Dmitrović                      | Beginner     | Up to C23 |
 | Intermediate C Programming       | 2nd     | 2024 | Yung-Hsiang Lu, George K. Thiruvathukal | Everyone     | Up to C23 |
 | Tiny C Projects                  | 1st     | 2022 | Dan Gookin                              | Intermediate | Up to C23 |
@@ -140,8 +140,8 @@ Books listed here are classics. They are considered the best so far, but unfortu
 | Title                                | Edition  | Year       | Author(s)                             | Audience | C Version      |
 | ------------------------------------ | -------- | ---------- | ------------------------------------- | -------- | -------------- |
 | The C Programming Language           | 1st, 2nd | 1978, 1988 | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89, C99 |
-| C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C99      |
-| Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C99      |
+| C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C89      |
+| Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C89      |
 
 
 ### Resources
