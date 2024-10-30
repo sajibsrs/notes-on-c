@@ -9,7 +9,6 @@
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "CMAKE_C_COMPILER": "/opt/homebrew/bin/aarch64-apple-darwin24-gcc-14",
-                "CMAKE_CXX_COMPILER": "/opt/homebrew/bin/aarch64-apple-darwin24-g++-14",
                 "CMAKE_BUILD_TYPE": "Debug"
             }
         }
