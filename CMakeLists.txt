@@ -6,7 +6,8 @@ set(CMAKE_C_STANDARD_REQUIRED true)
 
 add_executable(${PROJECT_NAME}
     main.c
-    src/memory/dynamic/person.c
+    src/dynamic-memory/person.c
+    src/data-structures/linked-list.c
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src)
