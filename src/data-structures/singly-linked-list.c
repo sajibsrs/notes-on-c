@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "linked-list.h"
+#include "singly-linked-list.h"
 
 static SinglyLinkedListNode* node_construct(int val) {
   SinglyLinkedListNode* node = malloc(sizeof(SinglyLinkedListNode));
