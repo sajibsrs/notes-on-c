@@ -3,8 +3,8 @@
 
 #include "linked-list.h"
 
-static Node* node_construct(int val) {
-  Node* node = malloc(sizeof(Node));
+static SinglyLinkedListNode* node_construct(int val) {
+  SinglyLinkedListNode* node = malloc(sizeof(SinglyLinkedListNode));
   if (node == NULL) {
     return NULL;
   }
@@ -14,15 +14,15 @@ static Node* node_construct(int val) {
   return node;
 }
 
-Node* list_insert(Node* node, int val) {
-  Node* ptr = node_construct(val);
+SinglyLinkedListNode* list_insert(SinglyLinkedListNode* node, int val) {
+  SinglyLinkedListNode* ptr = node_construct(val);
   ptr->next = node;
 
   return ptr;
 }
 
-Node* list_search(Node* node, int val) {
-  Node* ptr = node;
+SinglyLinkedListNode* list_search(SinglyLinkedListNode* node, int val) {
+  SinglyLinkedListNode* ptr = node;
 
   while (ptr != NULL) {
     if ((ptr->value) == val) {
@@ -33,21 +33,21 @@ Node* list_search(Node* node, int val) {
   return ptr;
 }
 
-Node* list_delete(Node* node, int val) {
+SinglyLinkedListNode* list_delete(SinglyLinkedListNode* node, int val) {
   if (node == NULL) {
     return NULL;
   }
 
   if (node->value == val) {
-    Node* tmp = node;
+    SinglyLinkedListNode* tmp = node;
     node = node->next;
     free(tmp);
 
     return node;
   }
 
-  Node* prev = node;
-  Node* curr = node->next;
+  SinglyLinkedListNode* prev = node;
+  SinglyLinkedListNode* curr = node->next;
 
   while (curr != NULL && curr->value != val) {
     prev = curr;
@@ -61,7 +61,7 @@ Node* list_delete(Node* node, int val) {
   return node;
 }
 
-void list_print(Node* node) {
+void list_print(SinglyLinkedListNode* node) {
   if (node == NULL) {
     printf("NULL\n");
     return;
@@ -74,15 +74,15 @@ void list_print(Node* node) {
   printf("NULL\n");
 }
 
-void list_destruct(Node** node) {
+void list_destruct(SinglyLinkedListNode** node) {
   if (node == NULL || *node == NULL) {
     return;
   }
 
-  Node* current = *node;
+  SinglyLinkedListNode* current = *node;
 
   while (current != NULL) {
-    Node* tmp = current;
+    SinglyLinkedListNode* tmp = current;
     current = current->next;
     printf("removing: %d\n", tmp->value);
     free(tmp);
