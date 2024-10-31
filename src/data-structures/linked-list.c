@@ -5,6 +5,9 @@
 
 static Node* node_construct(int val) {
   Node* node = malloc(sizeof(Node));
+  if (node == NULL) {
+    return NULL;
+  }
   node->value = val;
   node->next = NULL;
 
@@ -72,7 +75,7 @@ void list_print(Node* node) {
 }
 
 void list_destruct(Node** node) {
-  if (node == NULL) {
+  if (node == NULL || *node == NULL) {
     return;
   }
 
