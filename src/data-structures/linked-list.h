@@ -1,6 +1,7 @@
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
+/// @brief Singly linked list node.
 typedef struct list_node {
   struct list_node* next;
   int value;
