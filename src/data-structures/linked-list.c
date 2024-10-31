@@ -27,7 +27,6 @@ Node* list_search(Node* node, int val) {
     }
     ptr = ptr->next;
   }
-
   return ptr;
 }
 
@@ -56,18 +55,34 @@ Node* list_delete(Node* node, int val) {
     prev->next = curr->next;
     free(curr);
   }
-
   return node;
 }
 
 void list_print(Node* node) {
   if (node == NULL) {
+    printf("NULL\n");
     return;
   }
 
-  while(node != NULL) {
+  while (node != NULL) {
     printf("%d -> ", node->value);
     node = node->next;
   }
   printf("NULL\n");
+}
+
+void list_destruct(Node** node) {
+  if (node == NULL) {
+    return;
+  }
+
+  Node* current = *node;
+
+  while (current != NULL) {
+    Node* tmp = current;
+    current = current->next;
+    printf("removing: %d\n", tmp->value);
+    free(tmp);
+  }
+  *node = NULL;
 }

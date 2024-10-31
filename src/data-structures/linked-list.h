@@ -34,4 +34,8 @@ Node* list_delete(Node* node, int val);
 /// @param node Node to start.
 void list_print(Node* node);
 
+/// @brief Remove a list.
+/// @param node First node (head).
+void list_destruct(Node** node);
+
 #endif
