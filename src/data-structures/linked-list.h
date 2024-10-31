@@ -24,4 +24,14 @@ Node* list_insert(Node* node, int val);
 /// @return Pointer to the node or NULL.
 Node* list_search(Node* node, int val);
 
+/// @brief Delete a node from list.
+/// @param node Node start seach from.
+/// @param val Value to find.
+/// @return Returns the new list node.
+Node* list_delete(Node* node, int val);
+
+/// @brief Print the list.
+/// @param node Node to start.
+void list_print(Node* node);
+
 #endif
