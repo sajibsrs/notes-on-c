@@ -66,7 +66,7 @@
 - [Random Access Memory (RAM)](./docs/memory/memory.md#random-access-memory-ram)
 - [Stack](./docs/memory/memory.md#stack)
 
-### Duration / Lifetime
+### Storage Duration & Linkage
 - Automatic
 - Static
 - Thread
