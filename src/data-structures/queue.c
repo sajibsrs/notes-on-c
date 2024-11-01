@@ -2,7 +2,7 @@
 
 #include "queue.h"
 
-static QueueNode *queue_node_construct(int value) {
+static QueueNode *node_construct(int value) {
   QueueNode *node = malloc(sizeof(QueueNode));
 
   if (node == NULL) {
@@ -17,7 +17,7 @@ static QueueNode *queue_node_construct(int value) {
 
 QueueNode *queue_insert(QueueNode *node, int value) {
   if (node == NULL) {
-    return queue_node_construct(value);
+    return node_construct(value);
   }
 
   QueueNode *curr = node;
