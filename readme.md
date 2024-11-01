@@ -46,14 +46,27 @@
 - Function
 - Nested
 
-## Struct / Structure
+## Struct (Structure)
 ## Union
-## Enum / Enumeration
+## Enum (Enumeration)
 
 ## Type Qualifiers
 - const
 - volatile
 - restrict
+
+## Operator Precedence
+- [Postfix Operators](./docs/operator-precedence.md#postfix-operators)
+- [Unary Operators](./docs/operator-precedence.md#unary-operators)
+- [Multiplicative Operators](./docs/operator-precedence.md#multiplicative-operators)
+- [Additive Operators](./docs/operator-precedence.md#additive-operators)
+- [Shift Operators](./docs/operator-precedence.md#shift-operators)
+- [Relational Operators](./docs/operator-precedence.md#relational-operators)
+- [Equality Operators](./docs/operator-precedence.md#equality-operators)
+- [Bitwise Operators](./docs/operator-precedence.md#bitwise-operators)
+- [Conditional Operator](./docs/operator-precedence.md#conditional-operator)
+- [Assignment Operators](./docs/operator-precedence.md#assignment-operators)
+- [Comma Operator](./docs/operator-precedence.md#comma-operator)
 
 ## Bitwise Operators
 - [AND (&)](./docs/bitwise.md#and-)
@@ -63,8 +76,8 @@
 - [SHIFT RIGHT (>>)](./docs/bitwise.md#shift-right-)
 
 ## Memory
-- [Random Access Memory (RAM)](./docs/memory/memory.md#random-access-memory-ram)
-- [Stack](./docs/memory/memory.md#stack)
+- [Random Access Memory (RAM)](./docs/memory.md#random-access-memory-ram)
+- [Stack](./docs/memory.md#stack)
 
 ### Storage Duration & Linkage
 - Automatic
@@ -83,7 +96,7 @@
 - Constant pointer
 
 ## Dynamic memory management
-- [malloc()](./docs/memory/dynamic.md#malloc)
+- [malloc()](./docs/dynamic-memory.md#malloc)
 - calloc()
 - realloc()
 - free()
