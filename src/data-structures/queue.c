@@ -26,7 +26,7 @@ QueueNode *queue_insert(QueueNode *node, int value) {
     curr = curr->next;
   }
 
-  curr->next = queue_node_construct(value);
+  curr->next = node_construct(value);
 
   return node;
 }
