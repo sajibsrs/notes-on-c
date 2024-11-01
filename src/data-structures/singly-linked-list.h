@@ -1,5 +1,5 @@
-#ifndef SINGLY_LINKED_LIST
-#define SINGLY_LINKED_LIST
+#ifndef SINGLY_LINKED_LIST_H
+#define SINGLY_LINKED_LIST_H
 
 /// @brief Singly linked list node.
 typedef struct SinglyLinkedListNode {

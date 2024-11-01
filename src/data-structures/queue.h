@@ -1,5 +1,5 @@
-#ifndef QUEUE
-#define QUEUE
+#ifndef QUEUE_H
+#define QUEUE_H
 
 /// @brief Queue node type.
 typedef struct QueueNode {
