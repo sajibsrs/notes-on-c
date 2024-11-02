@@ -21,9 +21,11 @@
 
 ## Variable
 
+## Input & output (IO)
+
 ## Array
 
-## String
+## Character & string
 ### Format Specifier
 ### Conversion Specifier
 
@@ -119,8 +121,6 @@
 - Out-of-Memory Errors
 - Memory Corruption
 
-## Input & output (IO)
-
 ## Macro
 ## Preprocessor directives
 
@@ -144,8 +144,6 @@
 - longjmp
 
 ## Debugging
-
-## Character & string
 ## Date & time
 ## Threads
 ## Portability
@@ -171,6 +169,3 @@ Books listed here are classics. They are considered the best so far, but unfortu
 | The C Programming Language           | 1st, 2nd | 1978, 1988 | Brian W. Kernighan, Dennis M. Ritchie | Everyone | Up to C89 |
 | C Programming: A Modern Approach     | 1st      | 1996       | K. N. King                            | Everyone | Up to C89 |
 | Expert C Programming: Deep C Secrets | 1st      | 1994       | Peter van der Linden                  | Expert   | Up to C89 |
-
-
-### Resources
