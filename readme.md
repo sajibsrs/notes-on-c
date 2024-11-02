@@ -1,4 +1,4 @@
-# C Programming Notes
+# Notes on C Programming
 
 ## Installation
 ### Compiler
@@ -12,14 +12,22 @@
 - Source code
 - Compilation
 - Linking
-- Building
 - Execution
 
 ## Data types
 - Primitive
 - Compound / User defined
 
+## Struct (Structure)
+
+## Union
+
+## Enum (Enumeration)
+
 ## Variable
+ - Declaration
+ - Initialization
+ - Casting
 
 ## Input & output (IO)
 
@@ -44,10 +52,6 @@
 - Function prototype
 - Function
 - Nested
-
-## Struct (Structure)
-## Union
-## Enum (Enumeration)
 
 ## Type Qualifiers
 - const
@@ -78,19 +82,23 @@
 - [Random Access Memory (RAM)](./docs/memory.md#random-access-memory-ram)
 - [Stack](./docs/memory.md#stack)
 
-### Storage Duration & Linkage
+### Storage Duration
 - Automatic
 - Static
 - Thread
-- Dynamic / Allocated
+- Dynamic
+
+### Linkage
+#### Internal
+#### External
 
 ## Pointer & reference
 - Pointer type
-- Pointer to value
-- Reference of memory address
-- Pointer to array
-- Pointer to function
-- Pointer to struct (Structure)
+- Reference
+- Pointer & value
+- Pointer & array
+- Pointer & function
+- Pointer & struct
 - Pointer to pointer
 - Constant pointer
 
@@ -143,12 +151,16 @@
 - setjmp
 - longjmp
 
-## Debugging
 ## Date & time
+
+## Debugging
+
 ## Threads
+
 ## Portability
 
 ## Data structures
+
 ## Algorithms
 
 ## Books & Resources (Recommendation)
