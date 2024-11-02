@@ -5,15 +5,8 @@
 ### Preparing Code Editor / IDE
 
 ## Program structure
+### Include Directive
 ### The `main()` function
-
-## Headers
-## Standard library
-- <stdio.h>
-- <stdlib.h>
-- <sys/socket.h>
-- <netdb.h>
-- <ifaddrs.h>
 
 ## Running a program
 - Source code
@@ -28,6 +21,8 @@
 
 ## Variable
 
+## Array
+
 ## String
 ### Format Specifier
 ### Conversion Specifier
@@ -38,6 +33,8 @@
 - Name
 - Parameters
 - Variable number of parameters
+
+## Headers
 
 ## Scope
 - File
@@ -126,6 +123,25 @@
 
 ## Macro
 ## Preprocessor directives
+
+## Standard library
+- <stdio.h>
+- <stdlib.h>
+- <sys/socket.h>
+- <netdb.h>
+- <ifaddrs.h>
+
+## Error Handling
+- Condition
+- assert
+- errno
+  - perror
+  - strerror
+- Signal
+  - handler
+  - raise
+- setjmp
+- longjmp
 
 ## Debugging
 
