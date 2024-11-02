@@ -97,7 +97,7 @@
 - Reference
 - Pointer & value
 - Pointer & array
-- Pointer & function
+- [Pointer & function](./docs/pointer-reference.md#pointer--function)
 - Pointer & struct
 - Pointer to pointer
 - Constant pointer
