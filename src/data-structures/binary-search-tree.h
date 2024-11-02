@@ -3,8 +3,8 @@
 
 /// @brief Binary seach tree node
 typedef struct BSTNode {
-  BSTNode *next;
-  BSTNode *prev;
+  BSTNode *left;
+  BSTNode *right;
   int value;
 } BSTNode;
 
