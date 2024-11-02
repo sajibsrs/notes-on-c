@@ -58,6 +58,16 @@
 - volatile
 - restrict
 
+## Storage Duration
+- Automatic
+- Static
+- Thread
+- Dynamic
+
+## Linkage
+- Internal
+- External
+
 ## Operator Precedence
 - [Postfix Operators](./docs/operator-precedence.md#postfix-operators)
 - [Unary Operators](./docs/operator-precedence.md#unary-operators)
@@ -81,16 +91,6 @@
 ## Memory
 - [Random Access Memory (RAM)](./docs/memory.md#random-access-memory-ram)
 - [Stack](./docs/memory.md#stack)
-
-### Storage Duration
-- Automatic
-- Static
-- Thread
-- Dynamic
-
-### Linkage
-#### Internal
-#### External
 
 ## Pointer & reference
 - Pointer type
