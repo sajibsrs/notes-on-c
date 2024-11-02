@@ -18,11 +18,11 @@
 - Primitive
 - Compound / User defined
 
-## Struct (Structure)
+## struct (Structure)
 
-## Union
+## union
 
-## Enum (Enumeration)
+## enum (Enumeration)
 
 ## Variable
  - Declaration
