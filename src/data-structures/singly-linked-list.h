@@ -7,11 +7,6 @@ typedef struct SinglyLinkedListNode {
   int value;
 } SinglyLinkedListNode;
 
-/// @brief Allocates and initializes a new node.
-/// @param val Value of the new node.
-/// @return Pointer to the new node.
-static SinglyLinkedListNode *node_construct(int val);
-
 /// @brief Insert a node into the list.
 /// @param node Node to be replaced.
 /// @param val Value of the new node.
