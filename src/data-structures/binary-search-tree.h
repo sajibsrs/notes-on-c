@@ -8,7 +8,7 @@ typedef struct BSTNode {
   int value;
 } BSTNode;
 
-/// @brief Insert a value
+/// @brief Insert a node to the binary tree.
 /// @param root Root node of the tree.
 /// @param value Node value.
 /// @return Pointer to the new root.
