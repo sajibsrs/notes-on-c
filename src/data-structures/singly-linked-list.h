@@ -10,7 +10,7 @@ typedef struct SinglyLinkedListNode {
 /// @brief Insert a node into the list.
 /// @param node Node to be replaced.
 /// @param val Value of the new node.
-/// @return Pointer to the new node.
+/// @return Pointer to the node.
 SinglyLinkedListNode *list_insert(SinglyLinkedListNode *node, int val);
 
 /// @brief Search a list.
