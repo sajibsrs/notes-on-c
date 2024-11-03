@@ -22,8 +22,8 @@ int main() {
 }
 ```
 `malloc` function returns `NULL` if it fails.
-- EXIT_FAILURE or 1
-- EXIT_SUCCESS or 0
+- `EXIT_FAILURE` or 1
+- `EXIT_SUCCESS` or 0
 
 *Basically the same thing.*
 
@@ -64,7 +64,7 @@ Assertion failed: (x == y), function main, file main.c, line 9.
 ```
 
 ## errorno
-`errno` works as a global variable. So we need to set it to `0` first, to clear out any previous error.
+`errno` works as a global variable (thread-local). So we need to set it to `0` first, to clear out any previous error.
 
 For specific errors, errorno defines different error type. Which can be used to determine error type. Such as EDOM, ERANGE, EINTR, EIO etc.
 ```c
@@ -136,19 +136,19 @@ signal(signal, handler)
 The first parameter of signal function is the signal (signal type). A signal can be raised by the system, interrupts or others. We subscribe to that specific signal.
 
 Some of the signals are:
-- SIGABRT - Abnormal termination (Abort).
-- SIGFPE - Error during an arithmetic operation.
-- SIGILL - Invalid instruction.
-- SIGINT - Interrupt.
-- SIGSEGV - Invalid storage access.
-- SIGTERM - Terminal request.
+- `SIGABRT` - Abnormal termination (Abort).
+- `SIGFPE` - Error during an arithmetic operation.
+- `SIGILL` - Invalid instruction.
+- `SIGINT` - Interrupt.
+- `SIGSEGV` - Invalid storage access.
+- `SIGTERM` - Terminal request.
 
 ### Handler
 A handler is the second parameter of the signal function. Which is responsible for what happens when this signal is encountered. There are some built in handler and we can define our own.
 
 Default handler:
-- SIG_DFL - Default signal handling.
-- SIG_IGN - Signal is ignored.
+- `SIG_DFL` - Default signal handling.
+- `SIG_IGN` - Signal is ignored.
 
 Custom handler:
 ```c
