@@ -22,7 +22,7 @@
 
 ## union
 
-## enum (Enumeration)
+## enum (Enumerator)
 
 ## Variable
  - Declaration
@@ -42,7 +42,7 @@
 - Return type
 - Name
 - Parameters
-- Variable number of parameters
+- Variadic function
 
 ## Headers
 
@@ -132,13 +132,6 @@
 ## Macro
 ## Preprocessor directives
 
-## Standard library
-- <stdio.h>
-- <stdlib.h>
-- <sys/socket.h>
-- <netdb.h>
-- <ifaddrs.h>
-
 ## Error Handling
 - Condition
 - assert
@@ -148,8 +141,7 @@
 - Signal
   - handler
   - raise
-- setjmp
-- longjmp
+- setjmp & longjmp
 
 ## Date & time
 
@@ -162,6 +154,13 @@
 ## Data structures
 
 ## Algorithms
+
+## Standard library
+- stdio.h
+- stdlib.h
+- sys/socket.h
+- netdb.h
+- ifaddrs.h
 
 ## Books & Resources (Recommendation)
 ### Books
