@@ -22,8 +22,10 @@ int main() {
 }
 ```
 `malloc` function returns `NULL` if it fails.
-- EXIT_FAILURE (1)
-- EXIT_SUCCESS (0)
+- EXIT_FAILURE or 1
+- EXIT_SUCCESS or 0
+
+*Basically the same thing.*
 
 Success:
 ```plaintext
@@ -117,6 +119,9 @@ Output:
 ```plaintext
 Result too large
 ```
+
+**Warning!:** The `errno` variable is thread-local, meaning each thread has its own separate `errno` variable. However, in multi-threaded applications, care should still be taken to check `errno` immediately after a function that might set it. Failing to do so can lead to errors being missed or misinterpreted, as other functions might modify `errno` within the same thread before it is checked.
+
 
 ## Signal
 Signal is actually, inter-process communication (IPC) mechanism designed to handle specific asynchronous events such as process interruptions, illegal instructions, segmentation faults, or termination requests, which can be used for error handling.
