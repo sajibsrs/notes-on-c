@@ -118,8 +118,58 @@ Output:
 Result too large
 ```
 
-## signal
-### handler
+## Signal
+Signal is actually, inter-process communication (IPC) mechanism designed to handle specific asynchronous events such as process interruptions, illegal instructions, segmentation faults, or termination requests, which can be used for error handling.
+
+Function signature:
+```c
+void (*signal(int sig, void (*func)(int)))(int);
+```
+signal(signal, handler)
+
+### Signal Type
+The first parameter of signal function is the signal (signal type). A signal can be raised by the system, interrupts or others. We subscribe to that specific signal.
+
+Some of the signals are:
+- SIGABRT - Abnormal termination (Abort).
+- SIGFPE - Error during an arithmetic operation.
+- SIGILL - Invalid instruction.
+- SIGINT - Interrupt.
+- SIGSEGV - Invalid storage access.
+- SIGTERM - Terminal request.
+
+### Handler
+A handler is the second parameter of the signal function. Which is responsible for what happens when this signal is encountered. There are some built in handler and we can define our own.
+
+Default handler:
+- SIG_DFL - Default signal handling.
+- SIG_IGN - Signal is ignored.
+
+Custom handler:
+```c
+void handler(int sig) {
+  printf("%s\n", strsignal(sig));
+  exit(EXIT_FAILURE);
+}
+
+int main() {
+  signal(SIGINT, handler);
+  raise(SIGINT);
+
+  return 0;
+}
+```
+
+Output:
+```plaintext
+Interrupt: 2
+```
+
 ### raise
+`raise` is used to manually raise a signal.
+
+```c
+raise(SIGINT);
+```
 
 ## setjmp & longjmp
