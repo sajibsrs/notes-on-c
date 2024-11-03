@@ -133,11 +133,11 @@
 ## Preprocessor directives
 
 ## Error Handling
-- Condition
-- assert
-- errno
-  - perror
-  - strerror
+- [Condition](./docs/error-handling.md#condition)
+- [assert](./docs//error-handling.md#assert)
+- [errno](./docs/error-handling.md#errorno)
+  - [perror](./docs/error-handling.md#perror)
+  - [strerror](./docs/error-handling.md#strerror)
 - Signal
   - handler
   - raise
