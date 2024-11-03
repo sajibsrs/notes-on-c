@@ -63,6 +63,8 @@ Assertion failed: (x == y), function main, file main.c, line 9.
 
 ## errorno
 `errno` works as a global variable. So we need to set it to `0` first, to clear out any previous error.
+
+For specific errors, errorno defines different error type. Which can be used to determine error type. Such as EDOM, ERANGE, EINTR, EIO etc.
 ```c
 #include <errno.h>
 
