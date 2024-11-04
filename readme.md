@@ -119,8 +119,8 @@
 - reallocarray()
 
 ## Memory management issues
-- Dangling pointer
-- Memory leak
+- [Dangling pointer](./docs/memory-issuess.md#dangling-pointer)
+- [Memory leak](./docs/memory-issuess.md#memory-leak)
 - Double free
 - Buffer overflow / Memory overrun
 - Memory Fragmentation
