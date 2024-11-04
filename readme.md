@@ -143,9 +143,9 @@
 - [errno](./docs/error-handling.md#errorno)
   - [perror](./docs/error-handling.md#perror)
   - [strerror](./docs/error-handling.md#strerror)
-- Signal
-  - handler
-  - raise
+- [Signal](./docs/error-handling.md#signal)
+  - [handler](./docs/error-handling.md#handler)
+  - [raise](./docs/error-handling.md#raise)
 - setjmp & longjmp
 
 ## Date & time
