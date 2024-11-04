@@ -57,17 +57,39 @@
 
 ## Headers
 
+## Storage Classes
+Only one storage class may appear in a declaration. If present it should come first.
+
+- auto
+- static
+- extern
+- register (variable only)
+
+## Type Qualifiers
+A declaration may contain zero or more type qualifiers.
+
+- const
+- volatile
+- restrict
+- inline (function only)
+
+## Type Specifiers
+- void
+- char
+- short
+- int
+- long
+- float
+- double
+- signed
+- unsigned
+
 ## Scope
 - File
 - Block
 - Function prototype
 - Function
 - Nested
-
-## Type Qualifiers
-- const
-- volatile
-- restrict
 
 ## Storage Duration
 - Automatic
