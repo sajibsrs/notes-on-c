@@ -32,6 +32,11 @@
 ## Input & output (IO)
 
 ## Array
+- Fixed Length Array
+- One Dimensional Array
+- Multi-dimensional Array
+- Variable Length Array (VLA)
+- Dynamic Array
 
 ## Character & string
 ### Format Specifier
