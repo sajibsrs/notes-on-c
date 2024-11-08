@@ -77,7 +77,7 @@ int add(int x) {
   return x + 5;
 }
 
-char (*select_fn(int (*op)(int)))(char) {
+char (*to_char(int (*op)(int)))(char) {
   return (char (*)(char))op;
 }
 
@@ -86,7 +86,7 @@ int main(void) {
   int x = fn(1);
   printf("x: %d\n", x);
 
-  char (*fn_ptr)(char) = select_fn(fn);
+  char (*fn_ptr)(char) = to_char(fn);
   char y = fn_ptr('A');
   printf("y: %c\n", y);
 
