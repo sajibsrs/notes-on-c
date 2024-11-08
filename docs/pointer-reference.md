@@ -24,6 +24,12 @@ int main(void) {
 }
 ```
 
+These both assignments are identical & works the same:
+```c
+int (*fn)(int) = add;
+int (*fn)(int) = &add;
+```
+
 Output:
 ```plaintext
 x: 6
@@ -42,7 +48,7 @@ int subtract(int a, int b) {
 
 void apply(int x, int y, int (*op)(int, int)) {
   int res = op(x, y);
-  printf("Result: %d\n", res);
+  printf("result: %d\n", res);
 }
 ```
 
@@ -59,10 +65,10 @@ int main() {
 }
 ```
 
-These both assignment is identical & works the same:
-```c
-int (*fn_ptr)(int, int) = add;
-int (*fn_ptr)(int, int) = &add;
+Output:
+```plaintext
+result: 7
+result: 3
 ```
 
 ### Returning Function Pointer
