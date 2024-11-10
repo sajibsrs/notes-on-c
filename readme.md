@@ -189,13 +189,10 @@ A declaration may contain zero or more type qualifiers.
 ## Algorithms
 
 ## Object Oriented Programming (OOP)
-- [Abstraction](./docs/oop.md#abstraction)
-- [Encapsulation](./docs/oop.md#encapsulation)
-  - [Public](./docs/oop.md#public)
-  - [Protected](./docs/oop.md#protected)
-  - [Private](./docs/oop.md#private)
-- [Inheritance](./docs/oop.md#inheritance)
-- [Polymorphism](./docs/oop.md#polymorphism)
+- [Abstraction](./docs/abstraction.md)
+- [Encapsulation](./docs/encapsulation.md)
+- [Inheritance](./docs/inheritance.md)
+- [Polymorphism](./docs/polymorphism.md)
 
 ## Standard library
 ### C89/C90 Standard Library Headers
