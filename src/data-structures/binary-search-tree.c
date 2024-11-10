@@ -51,3 +51,5 @@ BSTNode *bst_search(BSTNode *root, int value) {
 BSTNode *bst_delete(BSTNode *root, int value) {}
 void bst_print(BSTNode *root) {}
 void bst_destroy(BSTNode *root) {}
+
+// TODO: update comment style

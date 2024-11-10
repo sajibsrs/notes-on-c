@@ -3,9 +3,9 @@
 
 /// @brief Binary seach tree node
 typedef struct BSTNode {
-  BSTNode *left;
-  BSTNode *right;
-  int value;
+    BSTNode *left;
+    BSTNode *right;
+    int value;
 } BSTNode;
 
 /// @brief Insert a node to the binary tree.

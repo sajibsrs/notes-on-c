@@ -4,8 +4,8 @@
 #include "shape.h"
 
 typedef struct {
-  Shape shape;
-  float radius;
+    Shape shape;
+    float radius;
 } Circle;
 
 void circle_init(Circle *circle, float x, float y, float radius);

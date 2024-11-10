@@ -4,8 +4,8 @@
 #include "shape.h"
 
 typedef struct {
-  Shape shape;
-  float width, height;
+    Shape shape;
+    float width, height;
 } Rectangle;
 
 void rectangle_init(Rectangle *rectangle, float x, float y, float width, float height);

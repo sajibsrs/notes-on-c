@@ -2,7 +2,7 @@
 #define SHAPE_H
 
 typedef struct {
-  float x, y;
+    float x, y;
 } Shape;
 
 void shape_init(Shape *shape, float x, float y);

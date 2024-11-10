@@ -5,8 +5,8 @@
  * @brief Queue node type.
  */
 typedef struct QueueNode {
-  QueueNode *next;
-  int value;
+    QueueNode *next;
+    int value;
 } QueueNode;
 
 /**

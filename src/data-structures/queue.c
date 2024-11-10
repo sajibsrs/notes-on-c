@@ -3,30 +3,30 @@
 #include "queue.h"
 
 static QueueNode *node_construct(int value) {
-  QueueNode *node = malloc(sizeof(QueueNode));
+    QueueNode *node = malloc(sizeof(QueueNode));
 
-  if (node == NULL) {
-    return NULL;
-  }
+    if (node == NULL) {
+        return NULL;
+    }
 
-  node->value = value;
-  node->next = NULL;
+    node->value = value;
+    node->next = NULL;
 
-  return node;
+    return node;
 }
 
 QueueNode *queue_insert(QueueNode *node, int value) {
-  if (node == NULL) {
-    return node_construct(value);
-  }
+    if (node == NULL) {
+        return node_construct(value);
+    }
 
-  QueueNode *curr = node;
+    QueueNode *curr = node;
 
-  while (curr->next != NULL) {
-    curr = curr->next;
-  }
+    while (curr->next != NULL) {
+        curr = curr->next;
+    }
 
-  curr->next = node_construct(value);
+    curr->next = node_construct(value);
 
-  return node;
+    return node;
 }

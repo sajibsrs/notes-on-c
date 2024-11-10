@@ -3,8 +3,8 @@
 
 /// @brief Singly linked list node.
 typedef struct SinglyLinkedListNode {
-  struct SinglyLinkedListNode *next;
-  int value;
+    struct SinglyLinkedListNode *next;
+    int value;
 } SinglyLinkedListNode;
 
 /// @brief Insert a node into the list.

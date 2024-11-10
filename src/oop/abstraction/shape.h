@@ -5,12 +5,12 @@ typedef struct Shape Shape;
 typedef struct ShapeVTable ShapeVTable; // Shape virtual table.
 
 struct ShapeVTable {
-  float (*area)(Shape *self);
-  void (*draw)(Shape *self);
+    float (*area)(Shape *self);
+    void (*draw)(Shape *self);
 };
 
 struct Shape {
-  ShapeVTable *vtable;
+    ShapeVTable *vtable;
 };
 
 float shape_area(Shape *shape);
