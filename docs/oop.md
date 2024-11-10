@@ -173,6 +173,14 @@ int main(void) {
 }
 ```
 
+**Output:**
+```plaintext
+Rectangle area: 12.00
+Drawing Rectangle with width: 4.00 and height: 3.00
+Circle area: 78.54
+Drawing Circle with radius: 5.00
+```
+
 ## Encapsulation
 > Method: `Structs` with `functions` and `static` variables.
 
@@ -187,6 +195,122 @@ Encapsulation in C can be managed by using opaque pointers, static variables, an
 > Method: Composition and containment.
 
 Inheritance can be achieved by embedding one structure within another, allowing the "child" struct to contain data and functionality from the "parent" struct.
+
+**shape.h**
+```c
+#ifndef SHAPE_H
+#define SHAPE_H
+
+typedef struct {
+  float x, y;
+} Shape;
+
+void shape_init(Shape *shape, float x, float y);
+
+#endif
+```
+
+**shape.c**
+```c
+#include "shape.h"
+
+void shape_init(Shape *shape, float x, float y) {
+  shape->x = x;
+  shape->y = y;
+}
+```
+
+**circle.h**
+```c
+#ifndef CIRCLE_H
+#define CIRCLE_H
+
+#include "shape.h"
+
+typedef struct {
+  Shape shape;
+  float radius;
+} Circle;
+
+void circle_init(Circle *circle, float x, float y, float radius);
+void circle_print(const Circle *circle);
+
+#endif
+```
+
+**circle.c**
+```c
+#include "circle.h"
+#include <stdio.h>
+
+void circle_init(Circle *circle, float x, float y, float radius) {
+  shape_init(&circle->shape, x, y);
+  circle->radius = radius;
+}
+
+void circle_print(const Circle *circle) {
+  printf("Circle at (%.2f, %.2f) with radius %.2f\n", circle->shape.x, circle->shape.y, circle->radius);
+}
+```
+
+**rectangle.h**
+```c
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+#include "shape.h"
+
+typedef struct {
+  Shape shape;
+  float width, height;
+} Rectangle;
+
+void rectangle_init(Rectangle *rectangle, float x, float y, float width, float height);
+void rectangle_print(const Rectangle *rectangle);
+
+#endif
+```
+
+**rectangle.c**
+```c
+#include "rectangle.h"
+#include <stdio.h>
+
+void rectangle_init(Rectangle *rectangle, float x, float y, float width, float height) {
+  shape_init(&rectangle->shape, x, y);
+  rectangle->width = width;
+  rectangle->height = height;
+}
+
+void rectangle_print(const Rectangle *rectangle) {
+  printf("Rectangle at (%.2f, %.2f) with width %.2f and height %.2f\n", rectangle->shape.x, rectangle->shape.y,
+         rectangle->width, rectangle->height);
+}
+```
+
+**Usage:**
+```c
+#include "circle.h"
+#include "rectangle.h"
+
+int main(void) {
+  Circle circle;
+  circle_init(&circle, 2.0f, 3.0f, 5.0f);
+  circle_print(&circle);
+
+  Rectangle rectangle;
+  rectangle_init(&rectangle, 4.0f, 5.0f, 6.0f, 7.0f);
+  rectangle_print(&rectangle);
+
+  return 0;
+}
+```
+
+**Output:**
+```plaintext
+Circle at (2.00, 3.00) with radius 5.00
+Rectangle at (4.00, 5.00) with width 6.00 and height 7.00
+```
 
 ## Polymorphism
 > Method: `Function pointers` in structs.
