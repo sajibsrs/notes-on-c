@@ -12,7 +12,6 @@ static void rectangle_draw(Shape *shape) {
   printf("Drawing Rectangle with width: %.2f and height: %.2f\n", rect->width, rect->height);
 }
 
-// Define the vtable for Rectangle
 static ShapeVTable rectangle_vtable = {
     .area = rectangle_area,
     .draw = rectangle_draw,

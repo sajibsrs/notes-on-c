@@ -13,7 +13,6 @@ static void circle_draw(Shape *shape) {
   printf("Drawing Circle with radius: %.2f\n", circle->radius);
 }
 
-// Define the vtable for Circle.
 static ShapeVTable circle_vtable = {
   .area = circle_area,
   .draw = circle_draw,
