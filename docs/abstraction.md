@@ -3,7 +3,9 @@
 
 Abstraction in C can be achieved by creating "interfaces" with function pointers and only exposing necessary information in header files. This approach hides the implementation details, showing only what is essential to the user.
 
-shape.h - Defines a base structure for shapes and a "virtual table" (vtable) to store function pointers. Only necessary details are exposed here.
+shape.h
+
+Defines a base structure for shapes and a "virtual table" (vtable) to store function pointers. Only necessary details are exposed here.
 ```c
 #ifndef SHAPE_H
 #define SHAPE_H
@@ -30,7 +32,9 @@ void shape_draw(Shape *shape);   // Calls the draw function in the vtable
 #endif
 ```
 
-shape.c - Implements the public functions for shapes. These functions rely on function pointers in the vtable to determine behavior, abstracting details from the user.
+shape.c
+
+Implements the public functions for shapes. These functions rely on function pointers in the vtable to determine behavior, abstracting details from the user.
 ```c
 #include "shape.h"
 
@@ -45,7 +49,9 @@ void shape_draw(Shape *shape) {
 }
 ```
 
-circle.h - Defines the Circle structure, which includes the base Shape struct and specific data for circles. This file also provides a public interface for creating circles.
+circle.h
+
+Defines the Circle structure, which includes the base Shape struct and specific data for circles. This file also provides a public interface for creating circles.
 ```c
 #ifndef CIRCLE_H
 #define CIRCLE_H
@@ -63,7 +69,9 @@ Circle *circle_create(float radius);  // Constructor for Circle
 #endif
 ```
 
-circle.c - Implements the circle-specific functions and defines a vtable with function pointers for area and draw operations.
+circle.c
+
+Implements the circle-specific functions and defines a vtable with function pointers for area and draw operations.
 ```c
 #include "circle.h"
 #include <math.h>
@@ -102,7 +110,9 @@ void circle_destroy(Circle *circle) {
 }
 ```
 
-rectangle.h - Defines the Rectangle structure, which includes the base Shape struct and specific data for rectangles.
+rectangle.h
+
+Defines the Rectangle structure, which includes the base Shape struct and specific data for rectangles.
 ```c
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
@@ -121,7 +131,9 @@ Rectangle *rectangle_create(float width, float height);  // Constructor for Rect
 #endif
 ```
 
-rectangle.c - Implements the rectangle-specific functions and defines a vtable with function pointers for area and draw operations.
+rectangle.c
+
+Implements the rectangle-specific functions and defines a vtable with function pointers for area and draw operations.
 ```c
 #include "rectangle.h"
 #include <stdio.h>

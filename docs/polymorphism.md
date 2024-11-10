@@ -3,7 +3,9 @@
 
 Polymorphism can be achieved by using function pointers in structs to dynamically determine which function should be called. This enables objects of different types to be handled through a common interface.
 
-shape.h - Defines a base Shape struct with a function pointer table (vtable) for area calculation and printing. This serves as an "interface" for derived shapes.
+shape.h
+
+Defines a base Shape struct with a function pointer table (vtable) for area calculation and printing. This serves as an "interface" for derived shapes.
 
 ```c
 #ifndef SHAPE_H
@@ -30,7 +32,9 @@ void shape_print(Shape *shape);
 #endif
 ```
 
-shape.c - Implements functions to access the polymorphic functions in the vtable.
+shape.c
+
+Implements functions to access the polymorphic functions in the vtable.
 ```c
 #include "shape.h"
 
@@ -45,7 +49,9 @@ void shape_print(Shape *shape) {
 }
 ```
 
-circle.h - Defines a Circle struct that includes Shape as its base and declares functions for creating and destroying a Circle.
+circle.h
+
+Defines a Circle struct that includes Shape as its base and declares functions for creating and destroying a Circle.
 ```c
 #ifndef CIRCLE_H
 #define CIRCLE_H
@@ -65,7 +71,9 @@ void circle_destroy(Circle *circle);  // Destroy a Circle instance
 #endif
 ```
 
-circle.c - Implements the specific functions for Circle, including its area calculation and printing behavior.
+circle.c
+
+Implements the specific functions for Circle, including its area calculation and printing behavior.
 ```c
 #include "circle.h"
 #include <math.h>
@@ -104,7 +112,9 @@ void circle_destroy(Circle *circle) {
 }
 ```
 
-rectangle.h - Defines a Rectangle struct that includes Shape as its base and declares functions for creating and destroying a Rectangle.
+rectangle.h
+
+Defines a Rectangle struct that includes Shape as its base and declares functions for creating and destroying a Rectangle.
 ```c
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
@@ -125,7 +135,9 @@ void rectangle_destroy(Rectangle *rectangle);            // Destroy a Rectangle 
 #endif
 ```
 
-rectangle.c - Implements the specific functions for Rectangle, including its area calculation and printing behavior.
+rectangle.c
+
+Implements the specific functions for Rectangle, including its area calculation and printing behavior.
 ```c
 #include "rectangle.h"
 #include <stdio.h>

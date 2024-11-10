@@ -3,7 +3,9 @@
 
 Encapsulation in C can be managed by using opaque pointers, static variables, and functions that operate only on data within a given scope. To hide the inner details of a struct, you can only expose a pointer to it without revealing its full structure.
 
-shape.h - Header file (exposing public interface)
+shape.h
+
+Header file (exposing public interface)
 ```c
 #ifndef SHAPE_H
 #define SHAPE_H
@@ -23,7 +25,9 @@ void shape_set_position(Shape *shape, int x, int y);
 #endif
 ```
 
-shape.c - Base class file (protected and private implementation)
+shape.c
+
+Base class file (protected and private implementation)
 ```c
 #include "shape.h"
 #include <stdio.h>
@@ -68,7 +72,9 @@ static void shape_destroy(Shape *shape) {
 }
 ```
 
-rectangle.h - Derived class header (public, protected, and private)
+rectangle.h
+
+Derived class header (public, protected, and private)
 ```c
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
@@ -86,7 +92,9 @@ void rectangle_destroy(Rectangle *rect);
 #endif
 ```
 
-rectangle.c - Derived class implementation
+rectangle.c
+
+Derived class implementation
 ```c
 #include "rectangle.h"
 #include <stdio.h>
@@ -122,7 +130,9 @@ void rectangle_destroy(Rectangle *rect) {
 }
 ```
 
-main.c - Main function to demonstrate usage
+main.c
+
+Main function to demonstrate usage
 ```c
 #include "rectangle.h"
 #include "shape.h"
