@@ -5,45 +5,46 @@ Encapsulation in C can be managed by using opaque pointers, static variables, an
 
 shape.h
 
-Header file (exposing public interface)
+Public interface for Shape. The shape_create and shape_draw functions are accessible to all, while shape_set_position is available as extern, simulating protected access for use in derived types.
+
 ```c
 #ifndef SHAPE_H
 #define SHAPE_H
 
-// Public Interface
+// Public interface for Shape
 typedef struct Shape Shape;
 
 // Public functions
 Shape *shape_create(int x, int y);
 void shape_move(Shape *shape, int dx, int dy);
 void shape_draw(const Shape *shape);
-void shape_destroy(Shape *shape);
 
-// Protected functions (made public for subclass)
-void shape_set_position(Shape *shape, int x, int y);
+// Protected function (made available through extern)
+extern void shape_set_position(Shape *shape, int x, int y);
 
 #endif
 ```
 
 shape.c
 
-Base class file (protected and private implementation)
+This file includes private data (Shape's internal details) and protected methods that are only accessible to files that declare extern for shape_set_position.
+
 ```c
 #include "shape.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-// Private: internal struct definition and static variables
+// Private: Shape's internal structure, only accessible within shape.c
 struct Shape {
     int x;
     int y;
 };
 
-// Public function to create shape
+// Public function to create a shape
 Shape *shape_create(int x, int y) {
     Shape *shape = malloc(sizeof(Shape));
     if (shape != NULL) {
-        shape_set_position(shape, x, y);  // protected
+        shape_set_position(shape, x, y);  // Use protected method to initialize
     }
     return shape;
 }
@@ -60,28 +61,29 @@ void shape_draw(const Shape *shape) {
     printf("Shape at position (%d, %d)\n", shape->x, shape->y);
 }
 
-// Private function to set position (only accessible within this file)
-static void shape_set_position(Shape *shape, int x, int y) {
+// Protected function: accessible through `extern`
+void shape_set_position(Shape *shape, int x, int y) {
     shape->x = x;
     shape->y = y;
 }
 
-// Private function to destroy shape (only accessible within this file)
-static void shape_destroy(Shape *shape) {
-    free(shape);
+// Private function: only accessible within this file
+static void shape_private_method() {
+    // Internal use only
 }
 ```
 
 rectangle.h
 
-Derived class header (public, protected, and private)
+This header defines a derived type, Rectangle, which uses Shape as its base and can access shape_set_position due to its protected designation.
+
 ```c
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
 #include "shape.h"
 
-// Public Interface for Rectangle (inherits Shape)
+// Public interface for Rectangle
 typedef struct Rectangle Rectangle;
 
 // Public functions
@@ -94,15 +96,16 @@ void rectangle_destroy(Rectangle *rect);
 
 rectangle.c
 
-Derived class implementation
+Implements Rectangle and uses protected functions from Shape via extern.
+
 ```c
 #include "rectangle.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-// Private: internal Rectangle struct, with Shape as base (simulating inheritance)
+// Private: Rectangle struct with Shape base
 struct Rectangle {
-    Shape base;      // "protected" inheritance
+    Shape base;      // "Protected" inheritance of Shape
     int width;
     int height;
 };
@@ -111,7 +114,7 @@ struct Rectangle {
 Rectangle *rectangle_create(int x, int y, int width, int height) {
     Rectangle *rect = malloc(sizeof(Rectangle));
     if (rect != NULL) {
-        shape_set_position(&rect->base, x, y);  // protected access to Shape
+        shape_set_position(&rect->base, x, y);  // Access protected function
         rect->width = width;
         rect->height = height;
     }
@@ -121,7 +124,7 @@ Rectangle *rectangle_create(int x, int y, int width, int height) {
 // Public function to draw rectangle
 void rectangle_draw(const Rectangle *rect) {
     printf("Rectangle at position (%d, %d), width: %d, height: %d\n",
-            rect->base.x, rect->base.y, rect->width, rect->height);
+           rect->base.x, rect->base.y, rect->width, rect->height);
 }
 
 // Public function to destroy rectangle
@@ -132,7 +135,8 @@ void rectangle_destroy(Rectangle *rect) {
 
 main.c
 
-Main function to demonstrate usage
+Main program demonstrating encapsulation in action.
+
 ```c
 #include "rectangle.h"
 #include "shape.h"
@@ -145,7 +149,7 @@ int main() {
     rectangle_draw(rect);
 
     // Move the rectangle
-    shape_move((Shape *)rect, 10, 5);  // Using the Shape interface
+    shape_move((Shape *)rect, 10, 5);  // Use Shape's public interface
 
     // Destroy the rectangle
     rectangle_destroy(rect);
@@ -155,6 +159,7 @@ int main() {
 ```
 
 Output:
+
 ```plaintext
 Rectangle at position (10, 20), width: 100, height: 50
 Shape at position (20, 25)
