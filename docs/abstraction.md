@@ -18,13 +18,13 @@ typedef struct ShapeVTable ShapeVTable;
 
 // VTable for Shape: function pointers for area and draw methods
 struct ShapeVTable {
-  float (*area)(Shape *self);  // Calculates the area
-  void (*draw)(Shape *self);   // Draws the shape
+    float (*area)(Shape *self);  // Calculates the area
+    void (*draw)(Shape *self);   // Draws the shape
 };
 
 // Shape structure with a pointer to its VTable
 struct Shape {
-  ShapeVTable *vtable;  // Pointer to shape's virtual table
+    ShapeVTable *vtable;  // Pointer to shape's virtual table
 };
 
 // Public interface functions
@@ -87,33 +87,33 @@ Implements the circle-specific functions and defines a vtable with function poin
 
 // Function to calculate the area of a circle
 static float circle_area(Shape *shape) {
-  Circle *circle = (Circle *)shape;  // Cast Shape to Circle
-  return M_PI * circle->radius * circle->radius;
+    Circle *circle = (Circle *)shape;  // Cast Shape to Circle
+    return M_PI * circle->radius * circle->radius;
 }
 
 // Function to draw a circle
 static void circle_draw(Shape *shape) {
-  Circle *circle = (Circle *)shape;  // Cast Shape to Circle
-  printf("Drawing Circle with radius: %.2f\n", circle->radius);
+    Circle *circle = (Circle *)shape;  // Cast Shape to Circle
+    printf("Drawing Circle with radius: %.2f\n", circle->radius);
 }
 
 // Define the vtable for Circle, associating function pointers
 static ShapeVTable circle_vtable = {
-  .area = circle_area,
-  .draw = circle_draw,
+    .area = circle_area,
+    .draw = circle_draw,
 };
 
 // Constructor for Circle
 Circle *circle_create(float radius) {
-  Circle *circle = malloc(sizeof(Circle));
-  circle->base.vtable = &circle_vtable;  // Set vtable for Circle
-  circle->radius = radius;
+    Circle *circle = malloc(sizeof(Circle));
+    circle->base.vtable = &circle_vtable;  // Set vtable for Circle
+    circle->radius = radius;
 
-  return circle;
+    return circle;
 }
 
 void circle_destroy(Circle *circle) {
-  free(circle);  // Free allocated memory
+    free(circle);  // Free allocated memory
 }
 ```
 
@@ -127,15 +127,15 @@ void circle_destroy(Circle *circle) {
 #include <stdlib.h>
 
 int main(void) {
-  Shape *circle = (Shape *)circle_create(5.0f);   // Create a Circle as a Shape
+    Shape *circle = (Shape *)circle_create(5.0f);   // Create a Circle as a Shape
 
-  printf("Circle area: %.2f\n", shape_area(circle));
-  shape_draw(circle);
+    printf("Circle area: %.2f\n", shape_area(circle));
+    shape_draw(circle);
 
-  // Cleanup
-  free(circle);
+    // Cleanup
+    free(circle);
 
-  return 0;
+    return 0;
 }
 ```
 
