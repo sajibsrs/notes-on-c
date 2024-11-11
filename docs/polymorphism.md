@@ -3,7 +3,8 @@
 
 Polymorphism can be achieved by using function pointers in structs to dynamically determine which function should be called. This enables objects of different types to be handled through a common interface.
 
-shape.h
+---
+**shape.h**
 
 Defines a base Shape struct with a function pointer table (vtable) for area calculation and printing. This serves as an "interface" for derived shapes.
 
@@ -32,7 +33,8 @@ void shape_print(Shape *shape);
 #endif
 ```
 
-shape.c
+---
+**shape.c**
 
 Implements functions to access the polymorphic functions in the vtable.
 ```c
@@ -49,7 +51,8 @@ void shape_print(Shape *shape) {
 }
 ```
 
-circle.h
+---
+**circle.h**
 
 Defines a Circle struct that includes Shape as its base and declares functions for creating and destroying a Circle.
 ```c
@@ -71,7 +74,8 @@ void circle_destroy(Circle *circle);  // Destroy a Circle instance
 #endif
 ```
 
-circle.c
+---
+**circle.c**
 
 Implements the specific functions for Circle, including its area calculation and printing behavior.
 ```c
@@ -112,7 +116,8 @@ void circle_destroy(Circle *circle) {
 }
 ```
 
-rectangle.h
+---
+**rectangle.h**
 
 Defines a Rectangle struct that includes Shape as its base and declares functions for creating and destroying a Rectangle.
 ```c
@@ -135,7 +140,8 @@ void rectangle_destroy(Rectangle *rectangle);            // Destroy a Rectangle 
 #endif
 ```
 
-rectangle.c
+---
+**rectangle.c**
 
 Implements the specific functions for Rectangle, including its area calculation and printing behavior.
 ```c
@@ -176,7 +182,9 @@ void rectangle_destroy(Rectangle *rect) {
 }
 ```
 
-Usage:
+---
+**Usage:**
+
 ```c
 #include "circle.h"
 #include "rectangle.h"
@@ -206,7 +214,8 @@ int main(void) {
 }
 ```
 
-Output:
+**Output:**
+
 ```plaintext
 Area: 12.00
 Rectangle with width: 4.00 and height: 3.00
