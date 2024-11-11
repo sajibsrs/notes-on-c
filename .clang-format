@@ -1,5 +1,5 @@
 BasedOnStyle: LLVM
 AllowShortFunctionsOnASingleLine: Empty
 BreakBeforeBraces: Attach
-IndentWidth: 2
+IndentWidth: 4
 ColumnLimit: 120
