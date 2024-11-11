@@ -17,13 +17,13 @@ typedef struct Shape Shape;
 
 // VTable struct for Shape containing function pointers for polymorphic behavior
 typedef struct {
-  float (*area)(Shape *self);   // Function pointer for area calculation
-  void (*print)(Shape *self);   // Function pointer for printing
+    float (*area)(Shape *self);   // Function pointer for area calculation
+    void (*print)(Shape *self);   // Function pointer for printing
 } ShapeVTable;
 
 // Base Shape struct with a pointer to its vtable
 struct Shape {
-  ShapeVTable *vtable;  // Pointer to function table for polymorphism
+    ShapeVTable *vtable;  // Pointer to function table for polymorphism
 };
 
 // Function declarations for calling the vtable functions
@@ -63,8 +63,8 @@ Defines a Circle struct that includes Shape as its base and declares functions f
 
 // Circle struct inheriting Shape and adding radius attribute
 typedef struct {
-  Shape base;     // Base Shape struct
-  float radius;   // Circle-specific attribute
+    Shape base;     // Base Shape struct
+    float radius;   // Circle-specific attribute
 } Circle;
 
 // Function declarations for Circle
@@ -86,33 +86,33 @@ Implements the specific functions for Circle, including its area calculation and
 
 // Circle-specific area calculation
 static float circle_area(Shape *shape) {
-  Circle *circle = (Circle *)shape;  // Cast to Circle
-  return M_PI * circle->radius * circle->radius;
+    Circle *circle = (Circle *)shape;  // Cast to Circle
+    return M_PI * circle->radius * circle->radius;
 }
 
 // Circle-specific print function
 static void circle_print(Shape *shape) {
-  Circle *circle = (Circle *)shape;
-  printf("Circle with radius: %.2f\n", circle->radius);
+    Circle *circle = (Circle *)shape;
+    printf("Circle with radius: %.2f\n", circle->radius);
 }
 
 // Define the vtable for Circle with its specific functions
 static ShapeVTable circle_vtable = {
-  .area = circle_area,
-  .print = circle_print,
+    .area = circle_area,
+    .print = circle_print,
 };
 
 // Function to create a Circle and assign the vtable
 Circle *circle_create(float radius) {
-  Circle *circle = malloc(sizeof(Circle));
-  circle->base.vtable = &circle_vtable;  // Set Circle vtable
-  circle->radius = radius;
-  return circle;
+    Circle *circle = malloc(sizeof(Circle));
+    circle->base.vtable = &circle_vtable;  // Set Circle vtable
+    circle->radius = radius;
+    return circle;
 }
 
 // Free allocated memory for Circle
 void circle_destroy(Circle *circle) {
-  free(circle);
+    free(circle);
 }
 ```
 
@@ -128,9 +128,9 @@ Defines a Rectangle struct that includes Shape as its base and declares function
 
 // Rectangle struct inheriting Shape and adding width, height attributes
 typedef struct {
-  Shape base;        // Base Shape struct
-  float width;       // Rectangle-specific attribute
-  float height;      // Rectangle-specific attribute
+    Shape base;        // Base Shape struct
+    float width;       // Rectangle-specific attribute
+    float height;      // Rectangle-specific attribute
 } Rectangle;
 
 // Function declarations for Rectangle
@@ -151,14 +151,14 @@ Implements the specific functions for Rectangle, including its area calculation 
 
 // Rectangle-specific area calculation
 static float rectangle_area(Shape *shape) {
-  Rectangle *rect = (Rectangle *)shape;  // Cast to Rectangle
-  return rect->width * rect->height;
+    Rectangle *rect = (Rectangle *)shape;  // Cast to Rectangle
+    return rect->width * rect->height;
 }
 
 // Rectangle-specific print function
 static void rectangle_print(Shape *shape) {
-  Rectangle *rect = (Rectangle *)shape;
-  printf("Rectangle with width: %.2f and height: %.2f\n", rect->width, rect->height);
+    Rectangle *rect = (Rectangle *)shape;
+    printf("Rectangle with width: %.2f and height: %.2f\n", rect->width, rect->height);
 }
 
 // Define the vtable for Rectangle with its specific functions
@@ -169,16 +169,16 @@ static ShapeVTable rectangle_vtable = {
 
 // Function to create a Rectangle and assign the vtable
 Rectangle *rectangle_create(float width, float height) {
-  Rectangle *rect = malloc(sizeof(Rectangle));
-  rect->base.vtable = &rectangle_vtable;  // Set Rectangle vtable
-  rect->width = width;
-  rect->height = height;
-  return rect;
+    Rectangle *rect = malloc(sizeof(Rectangle));
+    rect->base.vtable = &rectangle_vtable;  // Set Rectangle vtable
+    rect->width = width;
+    rect->height = height;
+    return rect;
 }
 
 // Free allocated memory for Rectangle
 void rectangle_destroy(Rectangle *rect) {
-  free(rect);
+    free(rect);
 }
 ```
 
@@ -192,25 +192,25 @@ void rectangle_destroy(Rectangle *rect) {
 #include <stdio.h>
 
 int main(void) {
-  Shape *shapes[2];
+    Shape *shapes[2];
 
-  // Create and add a Rectangle to the shapes array
-  shapes[0] = (Shape *)rectangle_create(4.0f, 3.0f);
+    // Create and add a Rectangle to the shapes array
+    shapes[0] = (Shape *)rectangle_create(4.0f, 3.0f);
 
-  // Create and add a Circle to the shapes array
-  shapes[1] = (Shape *)circle_create(5.0f);
+    // Create and add a Circle to the shapes array
+    shapes[1] = (Shape *)circle_create(5.0f);
 
-  // Iterate through shapes and use polymorphic functions
-  for (int i = 0; i < 2; i++) {
-    printf("Area: %.2f\n", shape_area(shapes[i]));
-    shape_print(shapes[i]);
-  }
+    // Iterate through shapes and use polymorphic functions
+    for (int i = 0; i < 2; i++) {
+        printf("Area: %.2f\n", shape_area(shapes[i]));
+        shape_print(shapes[i]);
+    }
 
-  // Clean up memory
-  rectangle_destroy((Rectangle *)shapes[0]);
-  circle_destroy((Circle *)shapes[1]);
+    // Clean up memory
+    rectangle_destroy((Rectangle *)shapes[0]);
+    circle_destroy((Circle *)shapes[1]);
 
-  return 0;
+    return 0;
 }
 ```
 
