@@ -272,7 +272,7 @@ The **C23** standard introduces improvements and some additional features to eas
 
 
 #### Classics
-Books listed here are classics. They are considered the best so far, but unfortunately they are extremely outdated. Some of the topics and methods might not be relevant, deprecated or removed. They are mostly published 30-50 years ago (some more or less).
+Books listed here are classics. They are considered the best so far, but some of the topics and methods might not be relevant, deprecated or removed. They are mostly published 30-50 years ago (some more or less). Fortunately C language itself haven't changed that much.
 
 | Title                                | Edition  | Year       | Author(s)                             | Audience | C Version |
 | ------------------------------------ | -------- | ---------- | ------------------------------------- | -------- | --------- |
