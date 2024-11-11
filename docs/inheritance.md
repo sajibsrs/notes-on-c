@@ -3,9 +3,12 @@
 
 Inheritance can be achieved by embedding one structure within another, allowing the "child" struct to contain data and functionality from the "parent" struct.
 
-shape.h
+---
+
+**shape.h**
 
 Defines the base Shape structure and an initialization function. This serves as the "parent" structure for other shapes.
+
 ```c
 #ifndef SHAPE_H
 #define SHAPE_H
@@ -20,10 +23,12 @@ void shape_init(Shape *shape, float x, float y);
 
 #endif
 ```
+---
 
-shape.c
+**shape.c**
 
 Implements the function to initialize a Shape with given coordinates.
+
 ```c
 #include "shape.h"
 
@@ -34,9 +39,12 @@ void shape_init(Shape *shape, float x, float y) {
 }
 ```
 
-circle.h
+---
+
+**circle.h**
 
 Defines a Circle structure that includes a Shape as a base and adds a radius field.
+
 ```c
 #ifndef CIRCLE_H
 #define CIRCLE_H
@@ -58,9 +66,12 @@ void circle_print(const Circle *circle);
 #endif
 ```
 
-circle.c
+---
+
+**circle.c**
 
 Implements the circle-specific functions, including initialization and a print function.
+
 ```c
 #include "circle.h"
 #include <stdio.h>
@@ -77,9 +88,12 @@ void circle_print(const Circle *circle) {
 }
 ```
 
-rectangle.h
+---
+
+**rectangle.h**
 
 Defines a Rectangle structure that includes a Shape base and adds width and height.
+
 ```c
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
@@ -98,9 +112,12 @@ void rectangle_print(const Rectangle *rectangle);                               
 #endif
 ```
 
-rectangle.c
+---
+
+**rectangle.c**
 
 Implements the initialization and printing functions for Rectangle, using the inherited data from Shape.
+
 ```c
 #include "rectangle.h"
 #include <stdio.h>
@@ -119,7 +136,10 @@ void rectangle_print(const Rectangle *rectangle) {
 }
 ```
 
-Usage:
+---
+
+**Usage:**
+
 ```c
 #include "circle.h"
 #include "rectangle.h"
@@ -139,6 +159,7 @@ int main(void) {
 ```
 
 **Output:**
+
 ```plaintext
 Circle at (2.00, 3.00) with radius 5.00
 Rectangle at (4.00, 5.00) with width 6.00 and height 7.00
