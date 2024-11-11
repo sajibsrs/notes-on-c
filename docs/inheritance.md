@@ -15,7 +15,7 @@ Defines the base Shape structure and an initialization function. This serves as 
 
 // Base structure for a shape, containing common properties
 typedef struct {
-  float x, y;  // Position of the shape
+    float x, y; // Position of the shape
 } Shape;
 
 // Initializes a Shape's position
@@ -34,8 +34,8 @@ Implements the function to initialize a Shape with given coordinates.
 
 // Set the position of the shape
 void shape_init(Shape *shape, float x, float y) {
-  shape->x = x;
-  shape->y = y;
+    shape->x = x;
+    shape->y = y;
 }
 ```
 
@@ -53,8 +53,8 @@ Defines a Circle structure that includes a Shape as a base and adds a radius fie
 
 // Circle structure, inheriting from Shape
 typedef struct {
-  Shape shape;  // Embedded Shape structure (base class)
-  float radius; // Circle-specific attribute
+    Shape shape;  // Embedded Shape structure (base class)
+    float radius; // Circle-specific attribute
 } Circle;
 
 // Initializes a Circle's position and radius
@@ -78,13 +78,13 @@ Implements the circle-specific functions, including initialization and a print f
 
 // Initialize the Circle with position and radius, using shape_init for the base
 void circle_init(Circle *circle, float x, float y, float radius) {
-  shape_init(&circle->shape, x, y);  // Initialize the base Shape part
-  circle->radius = radius;
+    shape_init(&circle->shape, x, y);  // Initialize the base Shape part
+    circle->radius = radius;
 }
 
 // Print details of the Circle, including base position and radius
 void circle_print(const Circle *circle) {
-  printf("Circle at (%.2f, %.2f) with radius %.2f\n", circle->shape.x, circle->shape.y, circle->radius);
+    printf("Circle at (%.2f, %.2f) with radius %.2f\n", circle->shape.x, circle->shape.y, circle->radius);
 }
 ```
 
@@ -97,11 +97,11 @@ void circle_print(const Circle *circle) {
 #include "rectangle.h"
 
 int main(void) {
-  Circle circle;
-  circle_init(&circle, 2.0f, 3.0f, 5.0f);  // Create and initialize Circle
-  circle_print(&circle);                   // Print Circle details
+    Circle circle;
+    circle_init(&circle, 2.0f, 3.0f, 5.0f);  // Create and initialize Circle
+    circle_print(&circle);                   // Print Circle details
 
-  return 0;
+    return 0;
 }
 ```
 
