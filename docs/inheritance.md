@@ -90,54 +90,6 @@ void circle_print(const Circle *circle) {
 
 ---
 
-**rectangle.h**
-
-Defines a Rectangle structure that includes a Shape base and adds width and height.
-
-```c
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
-
-#include "shape.h"
-
-// Rectangle structure inheriting Shape by composition
-typedef struct {
-  Shape shape;       // Embedded Shape struct (base)
-  float width, height;  // Rectangle-specific attributes
-} Rectangle;
-
-void rectangle_init(Rectangle *rectangle, float x, float y, float width, float height);  // Initialize Rectangle
-void rectangle_print(const Rectangle *rectangle);                                       // Print Rectangle details
-
-#endif
-```
-
----
-
-**rectangle.c**
-
-Implements the initialization and printing functions for Rectangle, using the inherited data from Shape.
-
-```c
-#include "rectangle.h"
-#include <stdio.h>
-
-// Initializes Rectangle, calling shape_init for base struct
-void rectangle_init(Rectangle *rectangle, float x, float y, float width, float height) {
-  shape_init(&rectangle->shape, x, y);  // Initialize base Shape
-  rectangle->width = width;             // Set width
-  rectangle->height = height;           // Set height
-}
-
-// Prints details of the Rectangle
-void rectangle_print(const Rectangle *rectangle) {
-  printf("Rectangle at (%.2f, %.2f) with width %.2f and height %.2f\n",
-         rectangle->shape.x, rectangle->shape.y, rectangle->width, rectangle->height);
-}
-```
-
----
-
 **Usage:**
 
 ```c
@@ -149,18 +101,12 @@ int main(void) {
   circle_init(&circle, 2.0f, 3.0f, 5.0f);  // Create and initialize Circle
   circle_print(&circle);                   // Print Circle details
 
-  Rectangle rectangle;
-  rectangle_init(&rectangle, 4.0f, 5.0f, 6.0f, 7.0f);  // Create and initialize Rectangle
-  rectangle_print(&rectangle);                         // Print Rectangle details
-
   return 0;
 }
-
 ```
 
 **Output:**
 
 ```plaintext
 Circle at (2.00, 3.00) with radius 5.00
-Rectangle at (4.00, 5.00) with width 6.00 and height 7.00
 ```
