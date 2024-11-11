@@ -1,10 +1,42 @@
 # Notes on C Programming
+Simplified comprehensive notes on the C programming language.
+
+## Contents
+- Installation
+- Program Structure
+- Running a program
+- Data types
+- Function
+- Special
+- Headers
+- Storage Classes
+- Type Qualifiers
+- Type Specifiers
+- Scope
+- Storage Duration
+- Linkage
+- Operator Precedence
+- Bitwise Operators
+- Memory
+- Pointer & reference
+- Macro
+- Preprocessor directives
+- Error Handling
+- Date & time
+- Testing & Debugging
+- Threads
+- Portability
+- Data structures
+- Algorithms
+- Object Oriented Programming (OOP)
+- Standard library
+- Books & Resources (Recommendation)
 
 ## Installation
 ### Compiler
 ### Preparing Code Editor / IDE
 
-## Program structure
+## Program Structure
 ### Include Directive
 ### The `main()` function
 
@@ -18,29 +50,29 @@
 - Primitive
 - Compound / User defined
 
-## struct (Structure)
+### struct (Structure)
 
-## union
+### union
 
-## enum (Enumerator)
+### enum (Enumerator)
 
-## Variable
+### Variable
  - Declaration
  - Initialization
  - Casting
 
-## Input & output (IO)
+### Input & output (IO)
 
-## Array
+### Array
 - Fixed Length Array
 - One Dimensional Array
 - Multi-dimensional Array
 - Variable Length Array (VLA)
 - Dynamic Array
 
-## Character & string
-### Format Specifier
-### Conversion Specifier
+### Character & string
+#### Format Specifier
+#### Conversion Specifier
 
 ## Function
 ### Definition
@@ -178,7 +210,7 @@ A declaration may contain zero or more type qualifiers.
 
 ## Date & time
 
-## Debugging
+## Testing & Debugging
 
 ## Threads
 
