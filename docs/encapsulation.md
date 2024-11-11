@@ -1,11 +1,13 @@
 # Encapsulation
-> Method: `Structs` with `functions` and `static` variables.
+> Method: `File scope`, `static`, `extern`, and `functions`.
 
-Encapsulation in C can be managed by using opaque pointers, static variables, and functions that operate only on data within a given scope. To hide the inner details of a struct, you can only expose a pointer to it without revealing its full structure.
+Encapsulation in C is implemented by using **file scope** to restrict access to data, **static** variables to make data private to the file, and **extern** declarations to expose specific functions or variables to other parts of the program. By using **functions** that manipulate the data, you ensure that internal details are hidden and access is controlled, protecting the integrity of the data.
 
-shape.h
+---
 
-Public interface for Shape. The shape_create and shape_draw functions are accessible to all, while shape_set_position is available as extern, simulating protected access for use in derived types.
+**shape.h**
+
+Declares only the public interface for `Shape`.
 
 ```c
 #ifndef SHAPE_H
@@ -18,33 +20,40 @@ typedef struct Shape Shape;
 Shape *shape_create(int x, int y);
 void shape_move(Shape *shape, int dx, int dy);
 void shape_draw(const Shape *shape);
-
-// Protected function (made available through extern)
-extern void shape_set_position(Shape *shape, int x, int y);
+void shape_destroy(Shape *shape);
 
 #endif
 ```
 
-shape.c
+---
 
-This file includes private data (Shape's internal details) and protected methods that are only accessible to files that declare extern for shape_set_position.
+**shape.c**
+
+Implements `Shape`, containing both public and protected functions but only exposing the public ones via `shape.h`.
 
 ```c
 #include "shape.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-// Private: Shape's internal structure, only accessible within shape.c
+// Private: Shape's internal structure
 struct Shape {
     int x;
     int y;
 };
 
+// Protected function: not included in shape.h
+void shape_set_position(Shape *shape, int x, int y) {
+    shape->x = x;
+    shape->y = y;
+}
+
 // Public function to create a shape
 Shape *shape_create(int x, int y) {
     Shape *shape = malloc(sizeof(Shape));
     if (shape != NULL) {
-        shape_set_position(shape, x, y);  // Use protected method to initialize
+        shape->x = x;
+        shape->y = y;
     }
     return shape;
 }
@@ -61,56 +70,34 @@ void shape_draw(const Shape *shape) {
     printf("Shape at position (%d, %d)\n", shape->x, shape->y);
 }
 
-// Protected function: accessible through `extern`
-void shape_set_position(Shape *shape, int x, int y) {
-    shape->x = x;
-    shape->y = y;
-}
-
-// Private function: only accessible within this file
-static void shape_private_method() {
-    // Internal use only
+// Public function to destroy a shape
+void shape_destroy(Shape *shape) {
+    free(shape);
 }
 ```
 
-rectangle.h
+---
 
-This header defines a derived type, Rectangle, which uses Shape as its base and can access shape_set_position due to its protected designation.
+**rectangle.c**
+
+Accesses the protected `shape_set_position` function via an `extern` declaration, limiting its visibility only to `rectangle.c`.
 
 ```c
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
-
 #include "shape.h"
-
-// Public interface for Rectangle
-typedef struct Rectangle Rectangle;
-
-// Public functions
-Rectangle *rectangle_create(int x, int y, int width, int height);
-void rectangle_draw(const Rectangle *rect);
-void rectangle_destroy(Rectangle *rect);
-
-#endif
-```
-
-rectangle.c
-
-Implements Rectangle and uses protected functions from Shape via extern.
-
-```c
-#include "rectangle.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-// Private: Rectangle struct with Shape base
+// Forward declaration of the protected function
+extern void shape_set_position(Shape *shape, int x, int y);
+
+// Private: Rectangle struct with Shape base (simulating inheritance)
 struct Rectangle {
-    Shape base;      // "Protected" inheritance of Shape
+    Shape base;      // Inherits properties of Shape
     int width;
     int height;
 };
 
-// Public function to create rectangle
+// Public function to create a rectangle
 Rectangle *rectangle_create(int x, int y, int width, int height) {
     Rectangle *rect = malloc(sizeof(Rectangle));
     if (rect != NULL) {
@@ -133,10 +120,8 @@ void rectangle_destroy(Rectangle *rect) {
 }
 ```
 
-main.c
-
-Main program demonstrating encapsulation in action.
-
+---
+**Usage:**
 ```c
 #include "rectangle.h"
 #include "shape.h"
@@ -148,8 +133,11 @@ int main() {
     // Draw the rectangle
     rectangle_draw(rect);
 
-    // Move the rectangle
-    shape_move((Shape *)rect, 10, 5);  // Use Shape's public interface
+    // Move the rectangle using Shape's public function
+    shape_move((Shape *)rect, 10, 5);
+
+    // Draw the rectangle again after moving it
+    rectangle_draw(rect);
 
     // Destroy the rectangle
     rectangle_destroy(rect);
@@ -158,9 +146,9 @@ int main() {
 }
 ```
 
-Output:
-
+**Output:**
 ```plaintext
 Rectangle at position (10, 20), width: 100, height: 50
 Shape at position (20, 25)
+Rectangle at position (20, 25), width: 100, height: 50
 ```
