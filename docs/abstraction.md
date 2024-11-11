@@ -3,9 +3,11 @@
 
 Abstraction in C can be achieved by creating "interfaces" with function pointers and only exposing necessary information in header files. This approach hides the implementation details, showing only what is essential to the user.
 
-shape.h
+---
+**shape.h**
 
 Defines a base structure for shapes and a "virtual table" (vtable) to store function pointers. Only necessary details are exposed here.
+
 ```c
 #ifndef SHAPE_H
 #define SHAPE_H
@@ -32,9 +34,11 @@ void shape_draw(Shape *shape);   // Calls the draw function in the vtable
 #endif
 ```
 
-shape.c
+---
+**shape.c**
 
 Implements the public functions for shapes. These functions rely on function pointers in the vtable to determine behavior, abstracting details from the user.
+
 ```c
 #include "shape.h"
 
@@ -49,9 +53,11 @@ void shape_draw(Shape *shape) {
 }
 ```
 
-circle.h
+---
+**circle.h**
 
 Defines the Circle structure, which includes the base Shape struct and specific data for circles. This file also provides a public interface for creating circles.
+
 ```c
 #ifndef CIRCLE_H
 #define CIRCLE_H
@@ -68,10 +74,11 @@ Circle *circle_create(float radius);  // Constructor for Circle
 
 #endif
 ```
-
-circle.c
+___
+**circle.c**
 
 Implements the circle-specific functions and defines a vtable with function pointers for area and draw operations.
+
 ```c
 #include "circle.h"
 #include <math.h>
@@ -110,98 +117,30 @@ void circle_destroy(Circle *circle) {
 }
 ```
 
-rectangle.h
+---
+***Usage:***
 
-Defines the Rectangle structure, which includes the base Shape struct and specific data for rectangles.
-```c
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
-
-#include "shape.h"
-
-// Rectangle structure inheriting from Shape
-typedef struct {
-    Shape base;    // Base Shape struct
-    float width;   // Rectangle-specific width
-    float height;  // Rectangle-specific height
-} Rectangle;
-
-Rectangle *rectangle_create(float width, float height);  // Constructor for Rectangle
-
-#endif
-```
-
-rectangle.c
-
-Implements the rectangle-specific functions and defines a vtable with function pointers for area and draw operations.
-```c
-#include "rectangle.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-// Function to calculate the area of a rectangle
-static float rectangle_area(Shape *shape) {
-  Rectangle *rect = (Rectangle *)shape;  // Cast Shape to Rectangle
-  return rect->width * rect->height;
-}
-
-// Function to draw a rectangle
-static void rectangle_draw(Shape *shape) {
-  Rectangle *rect = (Rectangle *)shape;  // Cast Shape to Rectangle
-  printf("Drawing Rectangle with width: %.2f and height: %.2f\n", rect->width, rect->height);
-}
-
-// Define the vtable for Rectangle, associating function pointers
-static ShapeVTable rectangle_vtable = {
-    .area = rectangle_area,
-    .draw = rectangle_draw,
-};
-
-// Constructor for Rectangle
-Rectangle *rectangle_create(float width, float height) {
-  Rectangle *rect = malloc(sizeof(Rectangle));
-  rect->base.vtable = &rectangle_vtable;  // Set vtable for Rectangle
-  rect->width = width;
-  rect->height = height;
-
-  return rect;
-}
-
-void rectangle_destroy(Rectangle *rect) {
-  free(rect);  // Free allocated memory
-}
-```
-
-Usage:
 ```c
 #include "circle.h"
-#include "rectangle.h"
 #include "shape.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
-  Shape *rectangle = (Shape *)rectangle_create(4.0f, 3.0f);  // Create a Rectangle as a Shape
-  Shape *circle = (Shape *)circle_create(5.0f);              // Create a Circle as a Shape
-
-  printf("Rectangle area: %.2f\n", shape_area(rectangle));
-  shape_draw(rectangle);
+  Shape *circle = (Shape *)circle_create(5.0f);   // Create a Circle as a Shape
 
   printf("Circle area: %.2f\n", shape_area(circle));
   shape_draw(circle);
 
   // Cleanup
-  free(rectangle);
   free(circle);
 
   return 0;
 }
 ```
 
-Output
+**Output**
 ```plaintext
-Rectangle area: 12.00
-Drawing Rectangle with width: 4.00 and height: 3.00
 Circle area: 78.54
 Drawing Circle with radius: 5.00
 ```
