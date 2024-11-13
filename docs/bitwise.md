@@ -62,10 +62,53 @@ int main() {
 }
 ```
 
+*Note: This code might be unsafe in certain scenarios.*
+
 Output:
 ```txt
 byte 0 at: 0x16b68af54 00000001
 byte 1 at: 0x16b68af55 00000000
 byte 2 at: 0x16b68af56 00000000
 byte 3 at: 0x16b68af57 00000000
+```
+
+## A Better Memory Program
+
+```c
+#include <stdio.h>
+#include <stdint.h>
+
+// Union type to hold 32 bit values (4 bytes)
+typedef union {
+    int i;
+    float f;
+    uint32_t u;
+} CompositeNumeral;
+
+/**
+ * @brief Prints values as 4-bit binary chunks.
+ * Byte order gets reversed as we loop backward.
+ * @param n Value to print.
+ */
+void print_to_binary(uint32_t n) {
+    for (int i = 31; i >= 0; i--) {
+        printf("%d", (n >> i) & 1); // Shift bits and mask to get each bit
+        if (i % 4 == 0) printf(" "); // Put space after each 4 bits
+    }
+    printf("\n");
+}
+
+int main() {
+    CompositeNumeral cn;
+    cn.i = 1;
+
+    print_to_binary(cn.u);
+    return 0;
+}
+```
+
+Output:
+
+```plaintext
+0000 0000 0000 0000 0000 0000 0000 0001
 ```
