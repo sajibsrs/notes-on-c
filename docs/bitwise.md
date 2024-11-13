@@ -87,7 +87,6 @@ typedef union {
 
 /**
  * @brief Prints values as 4-bit binary chunks.
- * Byte order gets reversed as we loop backward.
  * @param n Value to print.
  */
 void print_to_binary(uint32_t n) {
