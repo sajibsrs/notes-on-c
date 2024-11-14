@@ -2,6 +2,9 @@
 Simplified comprehensive notes on the C programming language.
 
 ## Contents
+<details>
+<summary>Table of Contents</summary>
+
 - Installation
 - Program Structure
 - Running a program
@@ -31,6 +34,8 @@ Simplified comprehensive notes on the C programming language.
 - Object Oriented Programming (OOP)
 - Standard library
 - Books & Resources (Recommendation)
+
+</details>
 
 ## Installation
 ### Compiler
@@ -195,7 +200,10 @@ A declaration may contain zero or more type qualifiers.
 - Memory Corruption
 
 ## Macro
-## Preprocessor directives
+ - User Defined Macro
+ - Preprocessor Directives
+ - Built-in Macros
+ - [_Generic (c11)](./docs/macro.md#_generic-c11)
 
 ## Error Handling
 - [Condition](./docs/error-handling.md#condition)
