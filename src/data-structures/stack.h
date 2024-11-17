@@ -7,41 +7,57 @@
 
 #include <stdbool.h>
 
-/// @brief Stack item that'll be stored in stack.
+// Stack item that'll be stored in stack.
 typedef int Item;
-/// @brief Stack pointer.
+
+// Stack pointer.
 typedef struct StackType *Stack;
 
-/// @brief Create new stack.
-/// @return Pointer to that stack.
+/**
+ * @brief Create new stack.
+ * @param void
+ * @return Pointer to that stack.
+ */
 Stack create(void);
 
-/// @brief Destroy the stack and do necessary cleanup.
-/// @param stack Pointer to that stack.
+/**
+ * @brief Destroy the stack and do necessary cleanup.
+ * @param stack Pointer to that stack.
+ */
 void destroy(const Stack stack);
 
-/// @brief Make stack empty.
-/// @param stack Pointer to that stack.
+/**
+ * @brief Make stack empty.
+ * @param stack Pointer to that stack.
+ */
 void make_empty(const Stack stack);
 
-/// @brief Checks if stack is empty.
-/// @param stack
-/// @return
+/**
+ * @brief Checks if stack is empty.
+ * @param stack
+ * @return Boolean
+ */
 bool is_empty(const Stack stack);
 
-/// @brief Checks if the stack is full.
-/// @param stack Pointer to that stack.
-/// @return 1 if full 0 otherwise.
+/**
+ * @brief Checks if the stack is full.
+ * @param stack Pointer to that stack.
+ * @return `true` if stack is full `false` otherwise.
+ */
 bool is_full(const Stack stack);
 
-/// @brief Adds item to the top of the stack.
-/// @param stack Pointer to that stack.
-/// @param item Stack item.
+/**
+ * @brief Adds item to the top of the stack.
+ * @param stack Pointer to that stack.
+ * @param item Stack item.
+ */
 void push(const Stack stack, const Item item);
 
-/// @brief Removes item from the top of the stack.
-/// @param stack
-/// @return
+/**
+ * @brief Removes item from the top of the stack.
+ * @param stack Pointer to that stack.
+ * @return Removed item.
+ */
 Item pop(const Stack stack);
 
 #endif
