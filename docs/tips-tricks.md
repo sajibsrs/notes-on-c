@@ -1,4 +1,4 @@
-# Lesser-Known C Tips and Tricks
+# C Tips and Tricks
 ## Struct
 ### # **Single Composite Data Type**
 - **Purpose**: A `struct` is used to group different data types into a single composite type. This helps in organizing and managing related data.
