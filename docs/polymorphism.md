@@ -3,7 +3,58 @@
 
 Polymorphism can be achieved by using function pointers in structs to dynamically determine which function should be called. This enables objects of different types to be handled through a common interface.
 
----
+## Simplified Example
+```c
+#include <stdio.h>
+
+typedef struct {
+    void (*draw)(void *self);
+} Shape;
+
+void draw_shape(Shape *shape, void *obj) {
+    shape->draw(obj);    // Dynamic dispatch
+}
+
+typedef struct {
+    Shape base;
+    int radius;
+} Circle;
+
+void draw_circle(void *self) {
+    Circle *circle = (Circle *)self;
+    printf("Circle, with radius: %d\n", circle->radius);
+}
+
+typedef struct {
+    Shape base;
+    int width, height;
+} Rectangle;
+
+void draw_rectangle(void *self) {
+    Rectangle *rect = (Rectangle *)self;
+    printf("Rectangle, with width: %d, height: %d\n", rect->width,
+           rect->height);
+}
+
+int main(void) {
+    Circle circle = {{draw_circle}, 5};
+    Rectangle rect = {{draw_rectangle}, 10, 20};
+
+    draw_shape((Shape *)&circle, &circle);
+    draw_shape((Shape *)&rect, &rect);
+
+    return 0;
+}
+```
+
+**Output**:
+```plaintext
+Circle, with radius: 5
+Rectangle, with width: 10, height: 20
+```
+
+## Detailed Example
+
 **shape.h**
 
 Defines a base Shape struct with a function pointer table (vtable) for area calculation and printing. This serves as an "interface" for derived shapes.
