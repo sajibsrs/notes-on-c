@@ -10,6 +10,8 @@
     ```
 - **Why Use**: Groups related data together (e.g., coordinates for a 2D point), making the code easier to manage and more readable.
 
+---
+
 ### # **Struct Embedding**
 - **Purpose**: Struct embedding is used to embed one struct inside another, allowing the parent struct to access the fields and methods of the embedded struct. This technique is useful for inheritance-like behavior in C.
 - **Example**:
@@ -36,6 +38,8 @@
     ```
 - **Why Use**: Efficiently stores binary flags or small integer values, minimizing memory usage when space is limited, especially in embedded systems or hardware control.
 
+---
+
 ### # **Simulating Polymorphism**
 - **Purpose**: This technique simulates polymorphism in C by using function pointers in structs, allowing different behavior based on the type of the struct.
 - **Example**:
@@ -56,6 +60,8 @@
     ```
 - **Why Use**: Enables behavior specialization (like polymorphism in OOP) in C, where a single interface (e.g., `speak`) can have different implementations based on the type of the struct (`Dog`, `Cat`, etc.).
 
+---
+
 ### # **Empty Struct Trick for Padding**
 - **Purpose**: An empty struct is often used as a padding trick to align memory properly, especially for hardware or performance optimizations.
 - **Example**:
@@ -70,6 +76,8 @@
     } AlignedStruct;
     ```
 - **Why Use**: Aligns data to certain memory boundaries for performance or hardware reasons.
+
+---
 
 ## Array
 ### # **Flexible Array Members**
@@ -89,6 +97,8 @@
     ```
 - **Why Use**: This trick is useful for creating structs with dynamic-sized arrays without needing to malloc for the array separately.
 
+---
+
 ### # **Pointer to Pointer Trick for Multi-Dimensional Arrays**
 - **Purpose**: You can use a pointer to a pointer to access multi-dimensional arrays, saving memory.
 - **Example**:
@@ -100,6 +110,8 @@
     }
     ```
 - **Why Use**: Saves memory when dealing with dynamically allocated multi-dimensional arrays, compared to allocating one large block for the entire matrix.
+
+---
 
 ### # **Using `sizeof` to Find the Number of Elements in an Array**
 - **Purpose**: To calculate the number of elements in an array at compile time.
@@ -120,6 +132,8 @@
     ```
 - **Why Use**: Sometimes more efficient for specific low-level applications, though often less readable.
 
+---
+
 ## Pointer and Memory
 ### # **Pointer Arithmetic**
 - **Purpose**: Pointer arithmetic allows direct manipulation of memory addresses to traverse arrays or data structures, often used for optimized access or iteration.
@@ -131,6 +145,8 @@
     ```
 - **Why Use**: Provides a way to efficiently access and manipulate elements of arrays or buffers using pointers, offering low-level control over memory operations.
 
+---
+
 ### # **Restrict Keyword**
 - **Purpose**: The `restrict` keyword tells the compiler that a pointer is the only one that will access the object it points to, enabling more aggressive optimizations.
 - **Example**:
@@ -139,6 +155,8 @@
     ```
 - **Why Use**: Allows the compiler to optimize memory access, as it can assume that the two pointers (`arr1` and `arr2`) do not overlap and do not point to the same memory.
 
+---
+
 ### # **Inline Assembly**
 - **Purpose**: Inline assembly allows you to insert assembly instructions directly into your C code, enabling fine control over hardware or performance-critical operations.
 - **Example**:
@@ -146,6 +164,8 @@
     asm("mov %0, %%eax" : : "r"(val));
     ```
 - **Why Use**: Enables direct access to low-level operations and hardware instructions, which can be useful for optimization, device control, or platform-specific features.
+
+---
 
 ### # **Memory Alignment**
 - **Purpose**: The `__attribute__((aligned(n)))` directive specifies the memory alignment of a struct or variable, ensuring it is aligned to `n` bytes, which can improve performance or meet hardware requirements.
@@ -156,6 +176,8 @@
     };
     ```
 - **Why Use**: Ensures that data is aligned to boundaries that are optimal for the target architecture, often improving access speed or satisfying alignment constraints for hardware interfaces.
+
+---
 
 ### # **Type-unsafe `memcpy` Trick**
 - **Purpose**: You can use `memcpy` to copy non-trivial data types, but use with caution.
@@ -171,6 +193,8 @@
     ```
 - **Why Use**: Avoids writing custom copy functions for structs, but use with care for POD (Plain Old Data) types only, not complex types.
 
+---
+
 ## Bit Manipulations
 ### # **Check Even / Odd**
 - **Purpose**: Bitwise AND operation is used to quickly check if a number is even or odd. The least significant bit (LSB) determines the parity of the number.
@@ -180,6 +204,8 @@
     else printf("Even\n");
     ```
 - **Why Use**: The bitwise operation `num & 1` checks if the LSB is set to 1 (odd) or 0 (even), providing a faster alternative to modulus division for checking parity.
+
+---
 
 ### # **Swap Values**
 - **Purpose**: Bitwise XOR operation can be used to swap two variables without using a temporary variable.
@@ -191,6 +217,8 @@
     ```
 - **Why Use**: This method leverages XOR to swap values directly in place, without needing extra memory for a temporary variable, making it a space-efficient approach.
 
+---
+
 ### # **Set, Clear and Toggle Bits**
 - **Purpose**: Perform bitwise operations to manipulate specific bits of a number.
 - **Example**:
@@ -200,6 +228,8 @@
     num ^= (1 << 1);  // Toggle 1st bit
     ```
 - **Why Use**: These operations allow you to efficiently manipulate individual bits in a variable, such as enabling/disabling features, flags, or control bits in a low-level application.
+
+---
 
 ### # **Using Bitwise Operations to Reverse a Number**
 - **Purpose**: You can reverse the bits of an integer using bitwise operations.
@@ -216,6 +246,8 @@
     ```
 - **Why Use**: Handy for low-level bit manipulation tasks, especially in embedded or systems programming.
 
+---
+
 ### # **Efficient Calculation of Powers of 2**
 - **Purpose**: Efficient and compact way to calculate powers of 2 using bit shifting.
 - **Example**:
@@ -224,43 +256,51 @@
     ```
 - **Why Use**: Faster and cleaner than using `pow(2, n)` from `math.h` and doesn't require a loop.
 
+---
+
 ## Loops
 ### # **Using `volatile` for Loop Optimization**
-   - **Purpose**: Used in loops to prevent the compiler from optimizing out code that it thinks is redundant.
-   - **Example**:
-     ```c
-     volatile int i;
-     for (i = 0; i < 1000; i++) {
-         // Some code that shouldn't be optimized
-     }
-     ```
-   - **Why Use**: Prevents the compiler from optimizing code that's necessary for hardware interaction or other side-effect-heavy operations.
+- **Purpose**: Used in loops to prevent the compiler from optimizing out code that it thinks is redundant.
+- **Example**:
+    ```c
+    volatile int i;
+    for (i = 0; i < 1000; i++) {
+        // Some code that shouldn't be optimized
+    }
+    ```
+- **Why Use**: Prevents the compiler from optimizing code that's necessary for hardware interaction or other side-effect-heavy operations.
+
+---
 
 ## # **Using `goto` for Breaking out of Nested Loops**
-   - **Purpose**: In deeply nested loops, `goto` can be used to jump out of multiple loops at once.
-   - **Example**:
-     ```c
-     for (int i = 0; i < 10; i++) {
-         for (int j = 0; j < 10; j++) {
-             if (some_condition()) {
-                 goto end;
-             }
-         }
-     }
-     end:
-     printf("Exited loops.\n");
-     ```
-   - **Why Use**: When you need to exit from multiple loops, `goto` can be clearer than using flags or more complex control flow.
+- **Purpose**: In deeply nested loops, `goto` can be used to jump out of multiple loops at once.
+- **Example**:
+    ```c
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (some_condition()) {
+                goto end;
+            }
+        }
+    }
+    end:
+    printf("Exited loops.\n");
+    ```
+- **Why Use**: When you need to exit from multiple loops, `goto` can be clearer than using flags or more complex control flow.
+
+---
 
 ## Character and String
 ### **Optimizing String Concatenation with `strcat`**
-   - **Purpose**: Use `strcat` to efficiently concatenate strings in C.
-   - **Example**:
-     ```c
-     char result[50] = "Hello, ";
-     strcat(result, "world!");
-     ```
-   - **Why Use**: Avoids manual array indexing and can be more efficient than manual copying for string concatenation.
+- **Purpose**: Use `strcat` to efficiently concatenate strings in C.
+- **Example**:
+    ```c
+    char result[50] = "Hello, ";
+    strcat(result, "world!");
+    ```
+- **Why Use**: Avoids manual array indexing and can be more efficient than manual copying for string concatenation.
+
+---
 
 ## Macro
 ### # **Inline Functions**
@@ -269,6 +309,8 @@
     ```c
     inline int square(int x) { return x * x; }
     ```
+
+---
 
 ### # **Compiler-Specific Extensions**
 - **Purpose**: Some compilers allow non-standard features for performance improvements or custom behaviors.
@@ -282,6 +324,8 @@
     ```
 - **Why Use**: These can offer optimizations, but be aware of portability issues across different compilers.
 
+---
+
 ### # **Function-Like Macros with Side Effects**
 - **Purpose**: Use macros for quick, reusable code, but be cautious of side effects.
 - **Example**:
@@ -291,6 +335,8 @@
     ```
 - **Why Use**: Can be useful for quick calculations, but be careful about side effects from multiple evaluations of `x`.
 
+---
+
 ### # **Using `__attribute__((unused))` to Silence Warnings**
 - **Purpose**: When a function or variable is declared but not used, you can suppress unused warnings.
 - **Example**:
@@ -299,6 +345,8 @@
     ```
 - **Why Use**: Handy for functions or variables that are only used in certain situations (e.g., debugging or profiling).
 
+---
+
 ### # **Macro for Debug Logging**
 - **Purpose**: Use macros to create reusable debug logging functionality.
 - **Example**:
@@ -306,6 +354,8 @@
     #define LOG_DEBUG(msg) printf("[DEBUG] %s\n", msg);
     ```
 - **Why Use**: Macros allow you to quickly add debugging output to your code without the need for extra function calls, making it easier to track the flow and state of your program during development.
+
+---
 
 ## Debugging
 ### # **Assertion**
@@ -316,3 +366,5 @@
     assert(x > 0 && "x must be positive");
     ```
 - **Why Use**: Assertions help in catching programming errors early by ensuring that critical conditions are met, particularly during development and debugging.
+
+---
