@@ -27,6 +27,8 @@
     ```
 - **Why Use**: Struct embedding enables code reuse and the creation of more complex data structures by composing existing ones. It mimics inheritance in object-oriented programming languages, facilitating polymorphism and modular design in C.
 
+---
+
 ### # **Bit Fields in Structs**
 - **Purpose**: Bit fields allow packing multiple boolean flags or small integers into a single byte or word, saving memory space and optimizing performance.
 - **Example**:
