@@ -234,6 +234,9 @@ A declaration may contain zero or more type qualifiers.
 - [Inheritance](./docs/inheritance.md)
 - [Polymorphism](./docs/polymorphism.md)
 
+## Tips & Tricks
+- [View the List](./docs/tips-tricks.md)
+
 ## Standard library
 ### C89/C90 Standard Library Headers
 
