@@ -32,7 +32,7 @@ void destroy(const Stack stack) {
     free(stack);
 }
 
-void make_empty(const Stack stack) {
+void empty(const Stack stack) {
     while (!is_empty(stack)) {
         pop(stack);
     }
@@ -51,7 +51,6 @@ void push(const Stack stack, const Item i) {
     if (node == NULL) {
         terminate("Error in push: stack is full.");
     }
-
     node->data = i;
     node->next = stack->top;
     stack->top = node;
@@ -61,13 +60,11 @@ Item pop(const Stack stack) {
     if (is_empty(stack)) {
         terminate("Error in pop: stack is empty.");
     }
-
     struct Node *old_top = stack->top;
     Item item = old_top->data;
-
     stack->top = old_top->next;
-    free(old_top);
 
+    free(old_top);
     return item;
 }
 

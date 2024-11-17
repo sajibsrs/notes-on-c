@@ -30,7 +30,7 @@ void destroy(const Stack stack);
  * @brief Make stack empty.
  * @param stack Pointer to that stack.
  */
-void make_empty(const Stack stack);
+void empty(const Stack stack);
 
 /**
  * @brief Checks if stack is empty.
