@@ -168,6 +168,7 @@ A declaration may contain zero or more type qualifiers.
 - Pointer & value
 - Pointer & array
 - [Pointer & function](./docs/pointer-reference.md#pointer--function)
+  - [Function Pointer Nesting](./docs/function-pointer.md#function-pointer-nesting)
 - Pointer & struct
 - Pointer to pointer
 - Constant pointer
