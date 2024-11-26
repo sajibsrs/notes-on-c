@@ -1,6 +1,6 @@
 # Computer Memory
-## Random Access Memory (RAM)
-**Memory Layout of RAM:**
+## Memory Layout
+**Memory Layout of a Program:**
 ```plaintext
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  ← High memory address
 ┃           Stack           ┃  ← Growing Downward ↓

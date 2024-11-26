@@ -159,7 +159,7 @@ A declaration may contain zero or more type qualifiers.
 - [SHIFT RIGHT (>>)](./docs/bitwise.md#shift-right-)
 
 ## Memory
-- [Random Access Memory (RAM)](./docs/memory.md#random-access-memory-ram)
+- [Memory Layout](./docs/memory.md#random-access-memory-ram)
 - [Stack](./docs/memory.md#stack)
 
 ## Pointer & reference
