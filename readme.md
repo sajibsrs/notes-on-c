@@ -228,6 +228,9 @@ A declaration may contain zero or more type qualifiers.
 ## Data structures
 
 ## Algorithms
+### Recursion
+- [Basic Recursion](./docs/recursion.md#basic-recursion)
+- [Tail Recursion](./docs/recursion.md#tail-recursion)
 
 ## Object Oriented Programming (OOP)
 - [Abstraction](./docs/abstraction.md)
